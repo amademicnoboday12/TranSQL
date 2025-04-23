@@ -13,44 +13,8 @@ truncate sentence;
 truncate swish_grouped;
 truncate qkv_cache;
 
-insert into sentence values (0,128000),(1,49),(2,3390),(3,25),(4,3639),(5,596),(6,5076),(7,304),(8,1475),(9,11240),(10,30)
-,(11,49),(12,3390),(13,25),(14,3639),(15,596),(16,5076),(17,304),(18,1475),(19,11240),(20,30)
-,(21,49),(22,3390),(23,25),(24,3639),(25,596),(26,5076),(27,304),(28,1475),(29,11240),(30,30)
-,(31,49),(32,3390),(33,25),(34,3639),(35,596),(36,5076),(37,304),(38,1475),(39,11240),(40,30)
-,(41,49),(42,3390),(43,25),(44,3639),(45,596),(46,5076),(47,304),(48,1475),(49,11240),(50,30);
+insert into sentence values (0,128000),(1,49),(2,3390),(3,25),(4,3639),(5,596),(6,5076),(7,304),(8,1475),(9,11240),(10,30);
 
--- CREATE MACRO hadmard_prod_scalar(arr1, arr2, scalar) AS (
---       list_transform(list_zip(arr1,arr2),x->x[1]*x[2]*scalar));
--- CREATE MACRO hadmard_prod(arr1, arr2) AS (
---       list_transform(list_zip(arr1,arr2),x->x[1]*x[2]));
--- create macro element_neg_sum(arr1,arr2) as (
---       list_transform(list_zip(arr1,arr2),x->x[1]-x[2])
--- );
--- create macro element_sum(arr1,arr2) as (
---       list_transform(list_zip(arr1,arr2),x->x[1]+x[2])
--- );
-
--- create macro element_sum_quad_avg(arr1,arr2, dim) as (
---       list_transform(list_zip(arr1,arr2),x->(x[1]+x[2])**2/dim)
--- );
--- create macro view_as_real(arr1, arr2) as (
---      list_concat(arr1,arr2) 
--- );
-
--- create macro collect_as_array(idx, arr) as (
---       list_transform(list_sort(list_zip(idx,arr)),x->x[2])
--- );
-
--- create macro collect_real(ziped_arr,mid_pos) as (
---       list_transform(ziped_arr[:mid_pos],x->x[2])
--- );
--- create macro collect_img(ziped_arr,mid_pos) as (
---       list_transform(ziped_arr[mid_pos:],x->x[2])
--- );
-
--- create macro sumForEach(arr) as (
---       list_reduce(arr, (acc, row)-> list_transform(acc, (acc_val, i)->acc_val+row[i]))
--- );
 
 insert into freq_each_token select * from (with fet as (select token_id, list_transform(a.cis,x->x*token_id::Int32) as freqs from sentence,  (select list_transform(list_transform(range(64),x->x/64),x->1/pow(500000,x)) as cis) as a) 
 select token_id, list_transform(freqs,x->cos(x)) as freq_real, list_transform(freqs,x->sin(x)) as freq_img from fet);
