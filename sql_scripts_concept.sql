@@ -1,0 +1,6375 @@
+
+        SELECT
+          A./model/Trilu_output_0_dim0, A./model/Trilu_output_0_dim1,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/Trilu_output_0 AS A
+        JOIN /model/Constant_2_output_0 AS B
+          ON A./model/Trilu_output_0_dim0 = B./model/Constant_2_output_0_dim0 AND A./model/Trilu_output_0_dim1 = B./model/Constant_2_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/ConstantOfShape_output_0 AS A
+        JOIN /model/Constant_7_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/rotary_emb/ConstantOfShape_output_0 AS A
+        JOIN /model/rotary_emb/Constant_2_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/rotary_emb/Cast_output_0_dim0 AS /model/rotary_emb/Cast_output_0_dim0,
+          B./model/rotary_emb/Constant_3_output_0_dim1 AS /model/rotary_emb/Constant_3_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/rotary_emb/Cast_output_0_dim0_/model/rotary_emb/Constant_3_output_0_dim1
+        FROM /model/rotary_emb/Cast_output_0 AS A
+        JOIN /model/rotary_emb/Constant_3_output_0 AS B
+          ON A./model/rotary_emb/Cast_output_0_dim1 = B./model/rotary_emb/Constant_3_output_0_dim0
+        GROUP BY A./model/rotary_emb/Cast_output_0_dim0, B./model/rotary_emb/Constant_3_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/rotary_emb/Cos_output_0 AS A
+        JOIN /model/rotary_emb/Constant_4_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/rotary_emb/Sin_output_0 AS A
+        JOIN /model/rotary_emb/Constant_5_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.0/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.0/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.0/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.0/input_layernorm/Cast_output_0_dim0, A./model/layers.0/input_layernorm/Cast_output_0_dim1, A./model/layers.0/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.0/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.0/input_layernorm/Cast_output_0_dim0 = B./model/layers.0/input_layernorm/Div_output_0_dim0 AND A./model/layers.0/input_layernorm/Cast_output_0_dim1 = B./model/layers.0/input_layernorm/Div_output_0_dim1 AND A./model/layers.0/input_layernorm/Cast_output_0_dim2 = B./model/layers.0/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.0.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.0.input_layernorm.weight AS A
+        JOIN /model/layers.0/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.0.input_layernorm.weight_dim0 = B./model/layers.0/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.0/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.0/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4047_dim1 AS onnx::MatMul_4047_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4047_dim1
+        FROM /model/layers.0/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4047 AS B
+          ON A./model/layers.0/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4047_dim0
+        GROUP BY A./model/layers.0/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4047_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.0/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4048_dim1 AS onnx::MatMul_4048_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4048_dim1
+        FROM /model/layers.0/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4048 AS B
+          ON A./model/layers.0/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4048_dim0
+        GROUP BY A./model/layers.0/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4048_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.0/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4049_dim1 AS onnx::MatMul_4049_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4049_dim1
+        FROM /model/layers.0/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4049 AS B
+          ON A./model/layers.0/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4049_dim0
+        GROUP BY A./model/layers.0/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4049_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.0/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.0/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.0/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.0/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.0/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.0/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Transpose_output_0_dim0, A./model/layers.0/self_attn/Transpose_output_0_dim1, A./model/layers.0/self_attn/Transpose_output_0_dim2, A./model/layers.0/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.0/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.0/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.0/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.0/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Concat_output_0_dim0, A./model/layers.0/self_attn/Concat_output_0_dim1, A./model/layers.0/self_attn/Concat_output_0_dim2, A./model/layers.0/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.0/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.0/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.0/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.0/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Mul_output_0_dim0, A./model/layers.0/self_attn/Mul_output_0_dim1, A./model/layers.0/self_attn/Mul_output_0_dim2, A./model/layers.0/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.0/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.0/self_attn/Mul_output_0_dim0 = B./model/layers.0/self_attn/Mul_1_output_0_dim0 AND A./model/layers.0/self_attn/Mul_output_0_dim1 = B./model/layers.0/self_attn/Mul_1_output_0_dim1 AND A./model/layers.0/self_attn/Mul_output_0_dim2 = B./model/layers.0/self_attn/Mul_1_output_0_dim2 AND A./model/layers.0/self_attn/Mul_output_0_dim3 = B./model/layers.0/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Transpose_1_output_0_dim0, A./model/layers.0/self_attn/Transpose_1_output_0_dim1, A./model/layers.0/self_attn/Transpose_1_output_0_dim2, A./model/layers.0/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.0/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.0/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.0/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.0/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Concat_1_output_0_dim0, A./model/layers.0/self_attn/Concat_1_output_0_dim1, A./model/layers.0/self_attn/Concat_1_output_0_dim2, A./model/layers.0/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.0/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.0/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.0/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.0/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Mul_2_output_0_dim0, A./model/layers.0/self_attn/Mul_2_output_0_dim1, A./model/layers.0/self_attn/Mul_2_output_0_dim2, A./model/layers.0/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.0/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.0/self_attn/Mul_2_output_0_dim0 = B./model/layers.0/self_attn/Mul_3_output_0_dim0 AND A./model/layers.0/self_attn/Mul_2_output_0_dim1 = B./model/layers.0/self_attn/Mul_3_output_0_dim1 AND A./model/layers.0/self_attn/Mul_2_output_0_dim2 = B./model/layers.0/self_attn/Mul_3_output_0_dim2 AND A./model/layers.0/self_attn/Mul_2_output_0_dim3 = B./model/layers.0/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.0/self_attn/Constant_24_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.0/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.0/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Constant_29_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.0/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.0/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Constant_37_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Constant_37_output_0 AS A
+        JOIN /model/layers.0/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.0/self_attn/Constant_37_output_0_dim0 = B./model/layers.0/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Add_output_0 AS A
+        JOIN /model/layers.0/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.0/self_attn/Add_output_0_dim0 = B./model/layers.0/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.0/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.0/self_attn/Transpose_3_output_0_dim0 = B./model/layers.0/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Mul_6_output_0_dim0 AS /model/layers.0/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.0/self_attn/Mul_7_output_0_dim1 AS /model/layers.0/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/self_attn/Mul_6_output_0_dim0_/model/layers.0/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.0/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.0/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.0/self_attn/Mul_6_output_0_dim1 = B./model/layers.0/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.0/self_attn/Mul_6_output_0_dim0, B./model/layers.0/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/MatMul_output_0_dim0, A./model/layers.0/self_attn/MatMul_output_0_dim1, A./model/layers.0/self_attn/MatMul_output_0_dim2, A./model/layers.0/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.0/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.0/self_attn/MatMul_output_0_dim0 = B./model/layers.0/self_attn/Slice_4_output_0_dim0 AND A./model/layers.0/self_attn/MatMul_output_0_dim1 = B./model/layers.0/self_attn/Slice_4_output_0_dim1 AND A./model/layers.0/self_attn/MatMul_output_0_dim2 = B./model/layers.0/self_attn/Slice_4_output_0_dim2 AND A./model/layers.0/self_attn/MatMul_output_0_dim3 = B./model/layers.0/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.0/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.0/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.0/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.0/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.0/self_attn/Add_2_output_0_dim1, /model/layers.0/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.0/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.0/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Softmax_output_0_dim0 AS /model/layers.0/self_attn/Softmax_output_0_dim0,
+          B./model/layers.0/self_attn/Reshape_4_output_0_dim1 AS /model/layers.0/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/self_attn/Softmax_output_0_dim0_/model/layers.0/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.0/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.0/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.0/self_attn/Softmax_output_0_dim1 = B./model/layers.0/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.0/self_attn/Softmax_output_0_dim0, B./model/layers.0/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.0/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.0/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.0/self_attn/Reshape_5_output_0_dim0 AS /model/layers.0/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4115_dim1 AS onnx::MatMul_4115_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4115_dim1
+        FROM /model/layers.0/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4115 AS B
+          ON A./model/layers.0/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4115_dim0
+        GROUP BY A./model/layers.0/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4115_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/input_layernorm/Cast_output_0_dim0, A./model/layers.0/input_layernorm/Cast_output_0_dim1, A./model/layers.0/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.0/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.0/input_layernorm/Cast_output_0_dim0 = B./model/layers.0/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.0/input_layernorm/Cast_output_0_dim1 = B./model/layers.0/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.0/input_layernorm/Cast_output_0_dim2 = B./model/layers.0/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.0/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.0/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.0/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.0/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.0/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.0/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.0/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.0/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.0/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.0/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.0/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.0/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.0/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.0.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.0.post_attention_layernorm.weight AS A
+        JOIN /model/layers.0/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.0.post_attention_layernorm.weight_dim0 = B./model/layers.0/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4116_dim1 AS onnx::MatMul_4116_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4116_dim1
+        FROM /model/layers.0/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4116 AS B
+          ON A./model/layers.0/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4116_dim0
+        GROUP BY A./model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4116_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.0/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.0/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.0/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.0/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.0/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.0/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4117_dim1 AS onnx::MatMul_4117_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4117_dim1
+        FROM /model/layers.0/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4117 AS B
+          ON A./model/layers.0/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4117_dim0
+        GROUP BY A./model/layers.0/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4117_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/mlp/act_fn/Mul_output_0_dim0, A./model/layers.0/mlp/act_fn/Mul_output_0_dim1, A./model/layers.0/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.0/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.0/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.0/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.0/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.0/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.0/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.0/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.0/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.0/mlp/Mul_output_0_dim0 AS /model/layers.0/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4118_dim1 AS onnx::MatMul_4118_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.0/mlp/Mul_output_0_dim0_onnx::MatMul_4118_dim1
+        FROM /model/layers.0/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4118 AS B
+          ON A./model/layers.0/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4118_dim0
+        GROUP BY A./model/layers.0/mlp/Mul_output_0_dim0, B.onnx::MatMul_4118_dim1
+        
+
+
+        SELECT
+          A./model/layers.0/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.0/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.0/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.0/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.0/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.0/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.0/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.0/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.0/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.0/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.0/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.1/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.1/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.1/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.1/input_layernorm/Cast_output_0_dim0, A./model/layers.1/input_layernorm/Cast_output_0_dim1, A./model/layers.1/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.1/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.1/input_layernorm/Cast_output_0_dim0 = B./model/layers.1/input_layernorm/Div_output_0_dim0 AND A./model/layers.1/input_layernorm/Cast_output_0_dim1 = B./model/layers.1/input_layernorm/Div_output_0_dim1 AND A./model/layers.1/input_layernorm/Cast_output_0_dim2 = B./model/layers.1/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.1.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.1.input_layernorm.weight AS A
+        JOIN /model/layers.1/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.1.input_layernorm.weight_dim0 = B./model/layers.1/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.1/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.1/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4119_dim1 AS onnx::MatMul_4119_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4119_dim1
+        FROM /model/layers.1/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4119 AS B
+          ON A./model/layers.1/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4119_dim0
+        GROUP BY A./model/layers.1/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4119_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.1/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4120_dim1 AS onnx::MatMul_4120_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4120_dim1
+        FROM /model/layers.1/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4120 AS B
+          ON A./model/layers.1/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4120_dim0
+        GROUP BY A./model/layers.1/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4120_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.1/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4121_dim1 AS onnx::MatMul_4121_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4121_dim1
+        FROM /model/layers.1/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4121 AS B
+          ON A./model/layers.1/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4121_dim0
+        GROUP BY A./model/layers.1/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4121_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.1/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.1/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.1/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.1/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.1/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.1/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Transpose_output_0_dim0, A./model/layers.1/self_attn/Transpose_output_0_dim1, A./model/layers.1/self_attn/Transpose_output_0_dim2, A./model/layers.1/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.1/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.1/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.1/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.1/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Concat_output_0_dim0, A./model/layers.1/self_attn/Concat_output_0_dim1, A./model/layers.1/self_attn/Concat_output_0_dim2, A./model/layers.1/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.1/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.1/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.1/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.1/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Mul_output_0_dim0, A./model/layers.1/self_attn/Mul_output_0_dim1, A./model/layers.1/self_attn/Mul_output_0_dim2, A./model/layers.1/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.1/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.1/self_attn/Mul_output_0_dim0 = B./model/layers.1/self_attn/Mul_1_output_0_dim0 AND A./model/layers.1/self_attn/Mul_output_0_dim1 = B./model/layers.1/self_attn/Mul_1_output_0_dim1 AND A./model/layers.1/self_attn/Mul_output_0_dim2 = B./model/layers.1/self_attn/Mul_1_output_0_dim2 AND A./model/layers.1/self_attn/Mul_output_0_dim3 = B./model/layers.1/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Transpose_1_output_0_dim0, A./model/layers.1/self_attn/Transpose_1_output_0_dim1, A./model/layers.1/self_attn/Transpose_1_output_0_dim2, A./model/layers.1/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.1/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.1/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.1/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.1/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Concat_1_output_0_dim0, A./model/layers.1/self_attn/Concat_1_output_0_dim1, A./model/layers.1/self_attn/Concat_1_output_0_dim2, A./model/layers.1/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.1/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.1/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.1/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.1/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Mul_2_output_0_dim0, A./model/layers.1/self_attn/Mul_2_output_0_dim1, A./model/layers.1/self_attn/Mul_2_output_0_dim2, A./model/layers.1/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.1/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.1/self_attn/Mul_2_output_0_dim0 = B./model/layers.1/self_attn/Mul_3_output_0_dim0 AND A./model/layers.1/self_attn/Mul_2_output_0_dim1 = B./model/layers.1/self_attn/Mul_3_output_0_dim1 AND A./model/layers.1/self_attn/Mul_2_output_0_dim2 = B./model/layers.1/self_attn/Mul_3_output_0_dim2 AND A./model/layers.1/self_attn/Mul_2_output_0_dim3 = B./model/layers.1/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.1/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.1/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.1/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.1/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.1/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.1/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.1/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.1/self_attn/Constant_35_output_0_dim0 = B./model/layers.1/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Add_output_0 AS A
+        JOIN /model/layers.1/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.1/self_attn/Add_output_0_dim0 = B./model/layers.1/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.1/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.1/self_attn/Transpose_3_output_0_dim0 = B./model/layers.1/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Mul_6_output_0_dim0 AS /model/layers.1/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.1/self_attn/Mul_7_output_0_dim1 AS /model/layers.1/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/self_attn/Mul_6_output_0_dim0_/model/layers.1/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.1/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.1/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.1/self_attn/Mul_6_output_0_dim1 = B./model/layers.1/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.1/self_attn/Mul_6_output_0_dim0, B./model/layers.1/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/MatMul_output_0_dim0, A./model/layers.1/self_attn/MatMul_output_0_dim1, A./model/layers.1/self_attn/MatMul_output_0_dim2, A./model/layers.1/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.1/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.1/self_attn/MatMul_output_0_dim0 = B./model/layers.1/self_attn/Slice_4_output_0_dim0 AND A./model/layers.1/self_attn/MatMul_output_0_dim1 = B./model/layers.1/self_attn/Slice_4_output_0_dim1 AND A./model/layers.1/self_attn/MatMul_output_0_dim2 = B./model/layers.1/self_attn/Slice_4_output_0_dim2 AND A./model/layers.1/self_attn/MatMul_output_0_dim3 = B./model/layers.1/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.1/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.1/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.1/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.1/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.1/self_attn/Add_2_output_0_dim1, /model/layers.1/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.1/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.1/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Softmax_output_0_dim0 AS /model/layers.1/self_attn/Softmax_output_0_dim0,
+          B./model/layers.1/self_attn/Reshape_4_output_0_dim1 AS /model/layers.1/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/self_attn/Softmax_output_0_dim0_/model/layers.1/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.1/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.1/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.1/self_attn/Softmax_output_0_dim1 = B./model/layers.1/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.1/self_attn/Softmax_output_0_dim0, B./model/layers.1/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.1/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.1/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.1/self_attn/Reshape_5_output_0_dim0 AS /model/layers.1/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4187_dim1 AS onnx::MatMul_4187_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4187_dim1
+        FROM /model/layers.1/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4187 AS B
+          ON A./model/layers.1/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4187_dim0
+        GROUP BY A./model/layers.1/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4187_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/input_layernorm/Cast_output_0_dim0, A./model/layers.1/input_layernorm/Cast_output_0_dim1, A./model/layers.1/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.1/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.1/input_layernorm/Cast_output_0_dim0 = B./model/layers.1/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.1/input_layernorm/Cast_output_0_dim1 = B./model/layers.1/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.1/input_layernorm/Cast_output_0_dim2 = B./model/layers.1/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.1/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.1/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.1/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.1/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.1/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.1/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.1/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.1/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.1/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.1/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.1/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.1/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.1/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.1.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.1.post_attention_layernorm.weight AS A
+        JOIN /model/layers.1/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.1.post_attention_layernorm.weight_dim0 = B./model/layers.1/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4188_dim1 AS onnx::MatMul_4188_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4188_dim1
+        FROM /model/layers.1/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4188 AS B
+          ON A./model/layers.1/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4188_dim0
+        GROUP BY A./model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4188_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.1/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.1/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.1/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.1/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.1/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.1/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4189_dim1 AS onnx::MatMul_4189_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4189_dim1
+        FROM /model/layers.1/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4189 AS B
+          ON A./model/layers.1/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4189_dim0
+        GROUP BY A./model/layers.1/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4189_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/mlp/act_fn/Mul_output_0_dim0, A./model/layers.1/mlp/act_fn/Mul_output_0_dim1, A./model/layers.1/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.1/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.1/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.1/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.1/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.1/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.1/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.1/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.1/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.1/mlp/Mul_output_0_dim0 AS /model/layers.1/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4190_dim1 AS onnx::MatMul_4190_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.1/mlp/Mul_output_0_dim0_onnx::MatMul_4190_dim1
+        FROM /model/layers.1/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4190 AS B
+          ON A./model/layers.1/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4190_dim0
+        GROUP BY A./model/layers.1/mlp/Mul_output_0_dim0, B.onnx::MatMul_4190_dim1
+        
+
+
+        SELECT
+          A./model/layers.1/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.1/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.1/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.1/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.1/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.1/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.1/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.1/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.1/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.1/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.1/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.2/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.2/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.2/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.2/input_layernorm/Cast_output_0_dim0, A./model/layers.2/input_layernorm/Cast_output_0_dim1, A./model/layers.2/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.2/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.2/input_layernorm/Cast_output_0_dim0 = B./model/layers.2/input_layernorm/Div_output_0_dim0 AND A./model/layers.2/input_layernorm/Cast_output_0_dim1 = B./model/layers.2/input_layernorm/Div_output_0_dim1 AND A./model/layers.2/input_layernorm/Cast_output_0_dim2 = B./model/layers.2/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.2.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.2.input_layernorm.weight AS A
+        JOIN /model/layers.2/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.2.input_layernorm.weight_dim0 = B./model/layers.2/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.2/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.2/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4191_dim1 AS onnx::MatMul_4191_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4191_dim1
+        FROM /model/layers.2/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4191 AS B
+          ON A./model/layers.2/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4191_dim0
+        GROUP BY A./model/layers.2/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4191_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.2/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4192_dim1 AS onnx::MatMul_4192_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4192_dim1
+        FROM /model/layers.2/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4192 AS B
+          ON A./model/layers.2/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4192_dim0
+        GROUP BY A./model/layers.2/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4192_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.2/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4193_dim1 AS onnx::MatMul_4193_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4193_dim1
+        FROM /model/layers.2/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4193 AS B
+          ON A./model/layers.2/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4193_dim0
+        GROUP BY A./model/layers.2/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4193_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.2/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.2/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.2/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.2/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.2/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.2/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Transpose_output_0_dim0, A./model/layers.2/self_attn/Transpose_output_0_dim1, A./model/layers.2/self_attn/Transpose_output_0_dim2, A./model/layers.2/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.2/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.2/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.2/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.2/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Concat_output_0_dim0, A./model/layers.2/self_attn/Concat_output_0_dim1, A./model/layers.2/self_attn/Concat_output_0_dim2, A./model/layers.2/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.2/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.2/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.2/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.2/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Mul_output_0_dim0, A./model/layers.2/self_attn/Mul_output_0_dim1, A./model/layers.2/self_attn/Mul_output_0_dim2, A./model/layers.2/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.2/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.2/self_attn/Mul_output_0_dim0 = B./model/layers.2/self_attn/Mul_1_output_0_dim0 AND A./model/layers.2/self_attn/Mul_output_0_dim1 = B./model/layers.2/self_attn/Mul_1_output_0_dim1 AND A./model/layers.2/self_attn/Mul_output_0_dim2 = B./model/layers.2/self_attn/Mul_1_output_0_dim2 AND A./model/layers.2/self_attn/Mul_output_0_dim3 = B./model/layers.2/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Transpose_1_output_0_dim0, A./model/layers.2/self_attn/Transpose_1_output_0_dim1, A./model/layers.2/self_attn/Transpose_1_output_0_dim2, A./model/layers.2/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.2/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.2/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.2/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.2/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Concat_1_output_0_dim0, A./model/layers.2/self_attn/Concat_1_output_0_dim1, A./model/layers.2/self_attn/Concat_1_output_0_dim2, A./model/layers.2/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.2/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.2/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.2/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.2/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Mul_2_output_0_dim0, A./model/layers.2/self_attn/Mul_2_output_0_dim1, A./model/layers.2/self_attn/Mul_2_output_0_dim2, A./model/layers.2/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.2/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.2/self_attn/Mul_2_output_0_dim0 = B./model/layers.2/self_attn/Mul_3_output_0_dim0 AND A./model/layers.2/self_attn/Mul_2_output_0_dim1 = B./model/layers.2/self_attn/Mul_3_output_0_dim1 AND A./model/layers.2/self_attn/Mul_2_output_0_dim2 = B./model/layers.2/self_attn/Mul_3_output_0_dim2 AND A./model/layers.2/self_attn/Mul_2_output_0_dim3 = B./model/layers.2/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.2/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.2/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.2/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.2/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.2/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.2/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.2/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.2/self_attn/Constant_35_output_0_dim0 = B./model/layers.2/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Add_output_0 AS A
+        JOIN /model/layers.2/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.2/self_attn/Add_output_0_dim0 = B./model/layers.2/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.2/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.2/self_attn/Transpose_3_output_0_dim0 = B./model/layers.2/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Mul_6_output_0_dim0 AS /model/layers.2/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.2/self_attn/Mul_7_output_0_dim1 AS /model/layers.2/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/self_attn/Mul_6_output_0_dim0_/model/layers.2/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.2/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.2/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.2/self_attn/Mul_6_output_0_dim1 = B./model/layers.2/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.2/self_attn/Mul_6_output_0_dim0, B./model/layers.2/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/MatMul_output_0_dim0, A./model/layers.2/self_attn/MatMul_output_0_dim1, A./model/layers.2/self_attn/MatMul_output_0_dim2, A./model/layers.2/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.2/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.2/self_attn/MatMul_output_0_dim0 = B./model/layers.2/self_attn/Slice_4_output_0_dim0 AND A./model/layers.2/self_attn/MatMul_output_0_dim1 = B./model/layers.2/self_attn/Slice_4_output_0_dim1 AND A./model/layers.2/self_attn/MatMul_output_0_dim2 = B./model/layers.2/self_attn/Slice_4_output_0_dim2 AND A./model/layers.2/self_attn/MatMul_output_0_dim3 = B./model/layers.2/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.2/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.2/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.2/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.2/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.2/self_attn/Add_2_output_0_dim1, /model/layers.2/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.2/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.2/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Softmax_output_0_dim0 AS /model/layers.2/self_attn/Softmax_output_0_dim0,
+          B./model/layers.2/self_attn/Reshape_4_output_0_dim1 AS /model/layers.2/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/self_attn/Softmax_output_0_dim0_/model/layers.2/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.2/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.2/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.2/self_attn/Softmax_output_0_dim1 = B./model/layers.2/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.2/self_attn/Softmax_output_0_dim0, B./model/layers.2/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.2/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.2/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.2/self_attn/Reshape_5_output_0_dim0 AS /model/layers.2/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4259_dim1 AS onnx::MatMul_4259_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4259_dim1
+        FROM /model/layers.2/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4259 AS B
+          ON A./model/layers.2/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4259_dim0
+        GROUP BY A./model/layers.2/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4259_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/input_layernorm/Cast_output_0_dim0, A./model/layers.2/input_layernorm/Cast_output_0_dim1, A./model/layers.2/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.2/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.2/input_layernorm/Cast_output_0_dim0 = B./model/layers.2/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.2/input_layernorm/Cast_output_0_dim1 = B./model/layers.2/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.2/input_layernorm/Cast_output_0_dim2 = B./model/layers.2/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.2/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.2/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.2/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.2/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.2/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.2/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.2/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.2/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.2/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.2/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.2/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.2/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.2/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.2.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.2.post_attention_layernorm.weight AS A
+        JOIN /model/layers.2/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.2.post_attention_layernorm.weight_dim0 = B./model/layers.2/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4260_dim1 AS onnx::MatMul_4260_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4260_dim1
+        FROM /model/layers.2/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4260 AS B
+          ON A./model/layers.2/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4260_dim0
+        GROUP BY A./model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4260_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.2/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.2/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.2/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.2/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.2/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.2/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4261_dim1 AS onnx::MatMul_4261_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4261_dim1
+        FROM /model/layers.2/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4261 AS B
+          ON A./model/layers.2/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4261_dim0
+        GROUP BY A./model/layers.2/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4261_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/mlp/act_fn/Mul_output_0_dim0, A./model/layers.2/mlp/act_fn/Mul_output_0_dim1, A./model/layers.2/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.2/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.2/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.2/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.2/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.2/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.2/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.2/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.2/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.2/mlp/Mul_output_0_dim0 AS /model/layers.2/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4262_dim1 AS onnx::MatMul_4262_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.2/mlp/Mul_output_0_dim0_onnx::MatMul_4262_dim1
+        FROM /model/layers.2/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4262 AS B
+          ON A./model/layers.2/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4262_dim0
+        GROUP BY A./model/layers.2/mlp/Mul_output_0_dim0, B.onnx::MatMul_4262_dim1
+        
+
+
+        SELECT
+          A./model/layers.2/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.2/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.2/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.2/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.2/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.2/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.2/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.2/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.2/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.2/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.2/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.3/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.3/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.3/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.3/input_layernorm/Cast_output_0_dim0, A./model/layers.3/input_layernorm/Cast_output_0_dim1, A./model/layers.3/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.3/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.3/input_layernorm/Cast_output_0_dim0 = B./model/layers.3/input_layernorm/Div_output_0_dim0 AND A./model/layers.3/input_layernorm/Cast_output_0_dim1 = B./model/layers.3/input_layernorm/Div_output_0_dim1 AND A./model/layers.3/input_layernorm/Cast_output_0_dim2 = B./model/layers.3/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.3.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.3.input_layernorm.weight AS A
+        JOIN /model/layers.3/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.3.input_layernorm.weight_dim0 = B./model/layers.3/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.3/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.3/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4263_dim1 AS onnx::MatMul_4263_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4263_dim1
+        FROM /model/layers.3/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4263 AS B
+          ON A./model/layers.3/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4263_dim0
+        GROUP BY A./model/layers.3/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4263_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.3/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4264_dim1 AS onnx::MatMul_4264_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4264_dim1
+        FROM /model/layers.3/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4264 AS B
+          ON A./model/layers.3/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4264_dim0
+        GROUP BY A./model/layers.3/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4264_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.3/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4265_dim1 AS onnx::MatMul_4265_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4265_dim1
+        FROM /model/layers.3/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4265 AS B
+          ON A./model/layers.3/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4265_dim0
+        GROUP BY A./model/layers.3/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4265_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.3/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.3/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.3/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.3/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.3/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.3/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Transpose_output_0_dim0, A./model/layers.3/self_attn/Transpose_output_0_dim1, A./model/layers.3/self_attn/Transpose_output_0_dim2, A./model/layers.3/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.3/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.3/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.3/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.3/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Concat_output_0_dim0, A./model/layers.3/self_attn/Concat_output_0_dim1, A./model/layers.3/self_attn/Concat_output_0_dim2, A./model/layers.3/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.3/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.3/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.3/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.3/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Mul_output_0_dim0, A./model/layers.3/self_attn/Mul_output_0_dim1, A./model/layers.3/self_attn/Mul_output_0_dim2, A./model/layers.3/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.3/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.3/self_attn/Mul_output_0_dim0 = B./model/layers.3/self_attn/Mul_1_output_0_dim0 AND A./model/layers.3/self_attn/Mul_output_0_dim1 = B./model/layers.3/self_attn/Mul_1_output_0_dim1 AND A./model/layers.3/self_attn/Mul_output_0_dim2 = B./model/layers.3/self_attn/Mul_1_output_0_dim2 AND A./model/layers.3/self_attn/Mul_output_0_dim3 = B./model/layers.3/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Transpose_1_output_0_dim0, A./model/layers.3/self_attn/Transpose_1_output_0_dim1, A./model/layers.3/self_attn/Transpose_1_output_0_dim2, A./model/layers.3/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.3/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.3/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.3/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.3/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Concat_1_output_0_dim0, A./model/layers.3/self_attn/Concat_1_output_0_dim1, A./model/layers.3/self_attn/Concat_1_output_0_dim2, A./model/layers.3/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.3/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.3/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.3/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.3/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Mul_2_output_0_dim0, A./model/layers.3/self_attn/Mul_2_output_0_dim1, A./model/layers.3/self_attn/Mul_2_output_0_dim2, A./model/layers.3/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.3/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.3/self_attn/Mul_2_output_0_dim0 = B./model/layers.3/self_attn/Mul_3_output_0_dim0 AND A./model/layers.3/self_attn/Mul_2_output_0_dim1 = B./model/layers.3/self_attn/Mul_3_output_0_dim1 AND A./model/layers.3/self_attn/Mul_2_output_0_dim2 = B./model/layers.3/self_attn/Mul_3_output_0_dim2 AND A./model/layers.3/self_attn/Mul_2_output_0_dim3 = B./model/layers.3/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.3/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.3/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.3/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.3/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.3/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.3/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.3/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.3/self_attn/Constant_35_output_0_dim0 = B./model/layers.3/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Add_output_0 AS A
+        JOIN /model/layers.3/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.3/self_attn/Add_output_0_dim0 = B./model/layers.3/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.3/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.3/self_attn/Transpose_3_output_0_dim0 = B./model/layers.3/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Mul_6_output_0_dim0 AS /model/layers.3/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.3/self_attn/Mul_7_output_0_dim1 AS /model/layers.3/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/self_attn/Mul_6_output_0_dim0_/model/layers.3/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.3/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.3/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.3/self_attn/Mul_6_output_0_dim1 = B./model/layers.3/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.3/self_attn/Mul_6_output_0_dim0, B./model/layers.3/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/MatMul_output_0_dim0, A./model/layers.3/self_attn/MatMul_output_0_dim1, A./model/layers.3/self_attn/MatMul_output_0_dim2, A./model/layers.3/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.3/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.3/self_attn/MatMul_output_0_dim0 = B./model/layers.3/self_attn/Slice_4_output_0_dim0 AND A./model/layers.3/self_attn/MatMul_output_0_dim1 = B./model/layers.3/self_attn/Slice_4_output_0_dim1 AND A./model/layers.3/self_attn/MatMul_output_0_dim2 = B./model/layers.3/self_attn/Slice_4_output_0_dim2 AND A./model/layers.3/self_attn/MatMul_output_0_dim3 = B./model/layers.3/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.3/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.3/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.3/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.3/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.3/self_attn/Add_2_output_0_dim1, /model/layers.3/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.3/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.3/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Softmax_output_0_dim0 AS /model/layers.3/self_attn/Softmax_output_0_dim0,
+          B./model/layers.3/self_attn/Reshape_4_output_0_dim1 AS /model/layers.3/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/self_attn/Softmax_output_0_dim0_/model/layers.3/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.3/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.3/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.3/self_attn/Softmax_output_0_dim1 = B./model/layers.3/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.3/self_attn/Softmax_output_0_dim0, B./model/layers.3/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.3/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.3/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.3/self_attn/Reshape_5_output_0_dim0 AS /model/layers.3/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4331_dim1 AS onnx::MatMul_4331_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4331_dim1
+        FROM /model/layers.3/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4331 AS B
+          ON A./model/layers.3/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4331_dim0
+        GROUP BY A./model/layers.3/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4331_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/input_layernorm/Cast_output_0_dim0, A./model/layers.3/input_layernorm/Cast_output_0_dim1, A./model/layers.3/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.3/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.3/input_layernorm/Cast_output_0_dim0 = B./model/layers.3/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.3/input_layernorm/Cast_output_0_dim1 = B./model/layers.3/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.3/input_layernorm/Cast_output_0_dim2 = B./model/layers.3/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.3/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.3/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.3/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.3/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.3/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.3/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.3/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.3/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.3/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.3/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.3/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.3/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.3/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.3.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.3.post_attention_layernorm.weight AS A
+        JOIN /model/layers.3/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.3.post_attention_layernorm.weight_dim0 = B./model/layers.3/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4332_dim1 AS onnx::MatMul_4332_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4332_dim1
+        FROM /model/layers.3/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4332 AS B
+          ON A./model/layers.3/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4332_dim0
+        GROUP BY A./model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4332_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.3/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.3/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.3/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.3/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.3/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.3/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4333_dim1 AS onnx::MatMul_4333_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4333_dim1
+        FROM /model/layers.3/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4333 AS B
+          ON A./model/layers.3/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4333_dim0
+        GROUP BY A./model/layers.3/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4333_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/mlp/act_fn/Mul_output_0_dim0, A./model/layers.3/mlp/act_fn/Mul_output_0_dim1, A./model/layers.3/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.3/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.3/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.3/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.3/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.3/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.3/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.3/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.3/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.3/mlp/Mul_output_0_dim0 AS /model/layers.3/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4334_dim1 AS onnx::MatMul_4334_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.3/mlp/Mul_output_0_dim0_onnx::MatMul_4334_dim1
+        FROM /model/layers.3/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4334 AS B
+          ON A./model/layers.3/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4334_dim0
+        GROUP BY A./model/layers.3/mlp/Mul_output_0_dim0, B.onnx::MatMul_4334_dim1
+        
+
+
+        SELECT
+          A./model/layers.3/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.3/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.3/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.3/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.3/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.3/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.3/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.3/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.3/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.3/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.3/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.4/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.4/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.4/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.4/input_layernorm/Cast_output_0_dim0, A./model/layers.4/input_layernorm/Cast_output_0_dim1, A./model/layers.4/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.4/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.4/input_layernorm/Cast_output_0_dim0 = B./model/layers.4/input_layernorm/Div_output_0_dim0 AND A./model/layers.4/input_layernorm/Cast_output_0_dim1 = B./model/layers.4/input_layernorm/Div_output_0_dim1 AND A./model/layers.4/input_layernorm/Cast_output_0_dim2 = B./model/layers.4/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.4.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.4.input_layernorm.weight AS A
+        JOIN /model/layers.4/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.4.input_layernorm.weight_dim0 = B./model/layers.4/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.4/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.4/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4335_dim1 AS onnx::MatMul_4335_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4335_dim1
+        FROM /model/layers.4/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4335 AS B
+          ON A./model/layers.4/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4335_dim0
+        GROUP BY A./model/layers.4/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4335_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.4/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4336_dim1 AS onnx::MatMul_4336_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4336_dim1
+        FROM /model/layers.4/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4336 AS B
+          ON A./model/layers.4/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4336_dim0
+        GROUP BY A./model/layers.4/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4336_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.4/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4337_dim1 AS onnx::MatMul_4337_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4337_dim1
+        FROM /model/layers.4/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4337 AS B
+          ON A./model/layers.4/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4337_dim0
+        GROUP BY A./model/layers.4/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4337_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.4/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.4/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.4/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.4/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.4/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.4/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Transpose_output_0_dim0, A./model/layers.4/self_attn/Transpose_output_0_dim1, A./model/layers.4/self_attn/Transpose_output_0_dim2, A./model/layers.4/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.4/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.4/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.4/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.4/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Concat_output_0_dim0, A./model/layers.4/self_attn/Concat_output_0_dim1, A./model/layers.4/self_attn/Concat_output_0_dim2, A./model/layers.4/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.4/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.4/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.4/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.4/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Mul_output_0_dim0, A./model/layers.4/self_attn/Mul_output_0_dim1, A./model/layers.4/self_attn/Mul_output_0_dim2, A./model/layers.4/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.4/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.4/self_attn/Mul_output_0_dim0 = B./model/layers.4/self_attn/Mul_1_output_0_dim0 AND A./model/layers.4/self_attn/Mul_output_0_dim1 = B./model/layers.4/self_attn/Mul_1_output_0_dim1 AND A./model/layers.4/self_attn/Mul_output_0_dim2 = B./model/layers.4/self_attn/Mul_1_output_0_dim2 AND A./model/layers.4/self_attn/Mul_output_0_dim3 = B./model/layers.4/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Transpose_1_output_0_dim0, A./model/layers.4/self_attn/Transpose_1_output_0_dim1, A./model/layers.4/self_attn/Transpose_1_output_0_dim2, A./model/layers.4/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.4/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.4/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.4/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.4/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Concat_1_output_0_dim0, A./model/layers.4/self_attn/Concat_1_output_0_dim1, A./model/layers.4/self_attn/Concat_1_output_0_dim2, A./model/layers.4/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.4/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.4/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.4/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.4/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Mul_2_output_0_dim0, A./model/layers.4/self_attn/Mul_2_output_0_dim1, A./model/layers.4/self_attn/Mul_2_output_0_dim2, A./model/layers.4/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.4/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.4/self_attn/Mul_2_output_0_dim0 = B./model/layers.4/self_attn/Mul_3_output_0_dim0 AND A./model/layers.4/self_attn/Mul_2_output_0_dim1 = B./model/layers.4/self_attn/Mul_3_output_0_dim1 AND A./model/layers.4/self_attn/Mul_2_output_0_dim2 = B./model/layers.4/self_attn/Mul_3_output_0_dim2 AND A./model/layers.4/self_attn/Mul_2_output_0_dim3 = B./model/layers.4/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.4/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.4/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.4/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.4/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.4/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.4/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.4/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.4/self_attn/Constant_35_output_0_dim0 = B./model/layers.4/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Add_output_0 AS A
+        JOIN /model/layers.4/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.4/self_attn/Add_output_0_dim0 = B./model/layers.4/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.4/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.4/self_attn/Transpose_3_output_0_dim0 = B./model/layers.4/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Mul_6_output_0_dim0 AS /model/layers.4/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.4/self_attn/Mul_7_output_0_dim1 AS /model/layers.4/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/self_attn/Mul_6_output_0_dim0_/model/layers.4/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.4/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.4/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.4/self_attn/Mul_6_output_0_dim1 = B./model/layers.4/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.4/self_attn/Mul_6_output_0_dim0, B./model/layers.4/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/MatMul_output_0_dim0, A./model/layers.4/self_attn/MatMul_output_0_dim1, A./model/layers.4/self_attn/MatMul_output_0_dim2, A./model/layers.4/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.4/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.4/self_attn/MatMul_output_0_dim0 = B./model/layers.4/self_attn/Slice_4_output_0_dim0 AND A./model/layers.4/self_attn/MatMul_output_0_dim1 = B./model/layers.4/self_attn/Slice_4_output_0_dim1 AND A./model/layers.4/self_attn/MatMul_output_0_dim2 = B./model/layers.4/self_attn/Slice_4_output_0_dim2 AND A./model/layers.4/self_attn/MatMul_output_0_dim3 = B./model/layers.4/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.4/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.4/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.4/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.4/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.4/self_attn/Add_2_output_0_dim1, /model/layers.4/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.4/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.4/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Softmax_output_0_dim0 AS /model/layers.4/self_attn/Softmax_output_0_dim0,
+          B./model/layers.4/self_attn/Reshape_4_output_0_dim1 AS /model/layers.4/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/self_attn/Softmax_output_0_dim0_/model/layers.4/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.4/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.4/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.4/self_attn/Softmax_output_0_dim1 = B./model/layers.4/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.4/self_attn/Softmax_output_0_dim0, B./model/layers.4/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.4/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.4/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.4/self_attn/Reshape_5_output_0_dim0 AS /model/layers.4/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4403_dim1 AS onnx::MatMul_4403_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4403_dim1
+        FROM /model/layers.4/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4403 AS B
+          ON A./model/layers.4/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4403_dim0
+        GROUP BY A./model/layers.4/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4403_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/input_layernorm/Cast_output_0_dim0, A./model/layers.4/input_layernorm/Cast_output_0_dim1, A./model/layers.4/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.4/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.4/input_layernorm/Cast_output_0_dim0 = B./model/layers.4/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.4/input_layernorm/Cast_output_0_dim1 = B./model/layers.4/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.4/input_layernorm/Cast_output_0_dim2 = B./model/layers.4/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.4/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.4/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.4/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.4/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.4/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.4/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.4/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.4/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.4/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.4/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.4/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.4/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.4/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.4.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.4.post_attention_layernorm.weight AS A
+        JOIN /model/layers.4/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.4.post_attention_layernorm.weight_dim0 = B./model/layers.4/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4404_dim1 AS onnx::MatMul_4404_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4404_dim1
+        FROM /model/layers.4/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4404 AS B
+          ON A./model/layers.4/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4404_dim0
+        GROUP BY A./model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4404_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.4/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.4/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.4/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.4/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.4/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.4/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4405_dim1 AS onnx::MatMul_4405_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4405_dim1
+        FROM /model/layers.4/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4405 AS B
+          ON A./model/layers.4/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4405_dim0
+        GROUP BY A./model/layers.4/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4405_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/mlp/act_fn/Mul_output_0_dim0, A./model/layers.4/mlp/act_fn/Mul_output_0_dim1, A./model/layers.4/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.4/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.4/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.4/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.4/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.4/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.4/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.4/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.4/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.4/mlp/Mul_output_0_dim0 AS /model/layers.4/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4406_dim1 AS onnx::MatMul_4406_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.4/mlp/Mul_output_0_dim0_onnx::MatMul_4406_dim1
+        FROM /model/layers.4/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4406 AS B
+          ON A./model/layers.4/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4406_dim0
+        GROUP BY A./model/layers.4/mlp/Mul_output_0_dim0, B.onnx::MatMul_4406_dim1
+        
+
+
+        SELECT
+          A./model/layers.4/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.4/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.4/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.4/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.4/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.4/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.4/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.4/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.4/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.4/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.4/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.5/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.5/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.5/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.5/input_layernorm/Cast_output_0_dim0, A./model/layers.5/input_layernorm/Cast_output_0_dim1, A./model/layers.5/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.5/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.5/input_layernorm/Cast_output_0_dim0 = B./model/layers.5/input_layernorm/Div_output_0_dim0 AND A./model/layers.5/input_layernorm/Cast_output_0_dim1 = B./model/layers.5/input_layernorm/Div_output_0_dim1 AND A./model/layers.5/input_layernorm/Cast_output_0_dim2 = B./model/layers.5/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.5.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.5.input_layernorm.weight AS A
+        JOIN /model/layers.5/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.5.input_layernorm.weight_dim0 = B./model/layers.5/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.5/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.5/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4407_dim1 AS onnx::MatMul_4407_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4407_dim1
+        FROM /model/layers.5/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4407 AS B
+          ON A./model/layers.5/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4407_dim0
+        GROUP BY A./model/layers.5/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4407_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.5/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4408_dim1 AS onnx::MatMul_4408_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4408_dim1
+        FROM /model/layers.5/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4408 AS B
+          ON A./model/layers.5/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4408_dim0
+        GROUP BY A./model/layers.5/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4408_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.5/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4409_dim1 AS onnx::MatMul_4409_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4409_dim1
+        FROM /model/layers.5/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4409 AS B
+          ON A./model/layers.5/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4409_dim0
+        GROUP BY A./model/layers.5/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4409_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.5/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.5/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.5/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.5/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.5/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.5/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Transpose_output_0_dim0, A./model/layers.5/self_attn/Transpose_output_0_dim1, A./model/layers.5/self_attn/Transpose_output_0_dim2, A./model/layers.5/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.5/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.5/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.5/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.5/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Concat_output_0_dim0, A./model/layers.5/self_attn/Concat_output_0_dim1, A./model/layers.5/self_attn/Concat_output_0_dim2, A./model/layers.5/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.5/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.5/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.5/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.5/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Mul_output_0_dim0, A./model/layers.5/self_attn/Mul_output_0_dim1, A./model/layers.5/self_attn/Mul_output_0_dim2, A./model/layers.5/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.5/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.5/self_attn/Mul_output_0_dim0 = B./model/layers.5/self_attn/Mul_1_output_0_dim0 AND A./model/layers.5/self_attn/Mul_output_0_dim1 = B./model/layers.5/self_attn/Mul_1_output_0_dim1 AND A./model/layers.5/self_attn/Mul_output_0_dim2 = B./model/layers.5/self_attn/Mul_1_output_0_dim2 AND A./model/layers.5/self_attn/Mul_output_0_dim3 = B./model/layers.5/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Transpose_1_output_0_dim0, A./model/layers.5/self_attn/Transpose_1_output_0_dim1, A./model/layers.5/self_attn/Transpose_1_output_0_dim2, A./model/layers.5/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.5/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.5/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.5/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.5/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Concat_1_output_0_dim0, A./model/layers.5/self_attn/Concat_1_output_0_dim1, A./model/layers.5/self_attn/Concat_1_output_0_dim2, A./model/layers.5/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.5/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.5/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.5/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.5/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Mul_2_output_0_dim0, A./model/layers.5/self_attn/Mul_2_output_0_dim1, A./model/layers.5/self_attn/Mul_2_output_0_dim2, A./model/layers.5/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.5/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.5/self_attn/Mul_2_output_0_dim0 = B./model/layers.5/self_attn/Mul_3_output_0_dim0 AND A./model/layers.5/self_attn/Mul_2_output_0_dim1 = B./model/layers.5/self_attn/Mul_3_output_0_dim1 AND A./model/layers.5/self_attn/Mul_2_output_0_dim2 = B./model/layers.5/self_attn/Mul_3_output_0_dim2 AND A./model/layers.5/self_attn/Mul_2_output_0_dim3 = B./model/layers.5/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.5/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.5/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.5/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.5/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.5/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.5/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.5/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.5/self_attn/Constant_35_output_0_dim0 = B./model/layers.5/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Add_output_0 AS A
+        JOIN /model/layers.5/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.5/self_attn/Add_output_0_dim0 = B./model/layers.5/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.5/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.5/self_attn/Transpose_3_output_0_dim0 = B./model/layers.5/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Mul_6_output_0_dim0 AS /model/layers.5/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.5/self_attn/Mul_7_output_0_dim1 AS /model/layers.5/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/self_attn/Mul_6_output_0_dim0_/model/layers.5/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.5/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.5/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.5/self_attn/Mul_6_output_0_dim1 = B./model/layers.5/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.5/self_attn/Mul_6_output_0_dim0, B./model/layers.5/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/MatMul_output_0_dim0, A./model/layers.5/self_attn/MatMul_output_0_dim1, A./model/layers.5/self_attn/MatMul_output_0_dim2, A./model/layers.5/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.5/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.5/self_attn/MatMul_output_0_dim0 = B./model/layers.5/self_attn/Slice_4_output_0_dim0 AND A./model/layers.5/self_attn/MatMul_output_0_dim1 = B./model/layers.5/self_attn/Slice_4_output_0_dim1 AND A./model/layers.5/self_attn/MatMul_output_0_dim2 = B./model/layers.5/self_attn/Slice_4_output_0_dim2 AND A./model/layers.5/self_attn/MatMul_output_0_dim3 = B./model/layers.5/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.5/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.5/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.5/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.5/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.5/self_attn/Add_2_output_0_dim1, /model/layers.5/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.5/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.5/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Softmax_output_0_dim0 AS /model/layers.5/self_attn/Softmax_output_0_dim0,
+          B./model/layers.5/self_attn/Reshape_4_output_0_dim1 AS /model/layers.5/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/self_attn/Softmax_output_0_dim0_/model/layers.5/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.5/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.5/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.5/self_attn/Softmax_output_0_dim1 = B./model/layers.5/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.5/self_attn/Softmax_output_0_dim0, B./model/layers.5/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.5/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.5/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.5/self_attn/Reshape_5_output_0_dim0 AS /model/layers.5/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4475_dim1 AS onnx::MatMul_4475_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4475_dim1
+        FROM /model/layers.5/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4475 AS B
+          ON A./model/layers.5/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4475_dim0
+        GROUP BY A./model/layers.5/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4475_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/input_layernorm/Cast_output_0_dim0, A./model/layers.5/input_layernorm/Cast_output_0_dim1, A./model/layers.5/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.5/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.5/input_layernorm/Cast_output_0_dim0 = B./model/layers.5/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.5/input_layernorm/Cast_output_0_dim1 = B./model/layers.5/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.5/input_layernorm/Cast_output_0_dim2 = B./model/layers.5/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.5/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.5/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.5/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.5/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.5/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.5/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.5/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.5/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.5/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.5/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.5/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.5/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.5/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.5.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.5.post_attention_layernorm.weight AS A
+        JOIN /model/layers.5/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.5.post_attention_layernorm.weight_dim0 = B./model/layers.5/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4476_dim1 AS onnx::MatMul_4476_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4476_dim1
+        FROM /model/layers.5/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4476 AS B
+          ON A./model/layers.5/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4476_dim0
+        GROUP BY A./model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4476_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.5/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.5/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.5/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.5/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.5/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.5/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4477_dim1 AS onnx::MatMul_4477_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4477_dim1
+        FROM /model/layers.5/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4477 AS B
+          ON A./model/layers.5/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4477_dim0
+        GROUP BY A./model/layers.5/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4477_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/mlp/act_fn/Mul_output_0_dim0, A./model/layers.5/mlp/act_fn/Mul_output_0_dim1, A./model/layers.5/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.5/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.5/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.5/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.5/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.5/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.5/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.5/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.5/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.5/mlp/Mul_output_0_dim0 AS /model/layers.5/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4478_dim1 AS onnx::MatMul_4478_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.5/mlp/Mul_output_0_dim0_onnx::MatMul_4478_dim1
+        FROM /model/layers.5/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4478 AS B
+          ON A./model/layers.5/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4478_dim0
+        GROUP BY A./model/layers.5/mlp/Mul_output_0_dim0, B.onnx::MatMul_4478_dim1
+        
+
+
+        SELECT
+          A./model/layers.5/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.5/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.5/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.5/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.5/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.5/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.5/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.5/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.5/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.5/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.5/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.6/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.6/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.6/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.6/input_layernorm/Cast_output_0_dim0, A./model/layers.6/input_layernorm/Cast_output_0_dim1, A./model/layers.6/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.6/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.6/input_layernorm/Cast_output_0_dim0 = B./model/layers.6/input_layernorm/Div_output_0_dim0 AND A./model/layers.6/input_layernorm/Cast_output_0_dim1 = B./model/layers.6/input_layernorm/Div_output_0_dim1 AND A./model/layers.6/input_layernorm/Cast_output_0_dim2 = B./model/layers.6/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.6.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.6.input_layernorm.weight AS A
+        JOIN /model/layers.6/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.6.input_layernorm.weight_dim0 = B./model/layers.6/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.6/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.6/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4479_dim1 AS onnx::MatMul_4479_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4479_dim1
+        FROM /model/layers.6/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4479 AS B
+          ON A./model/layers.6/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4479_dim0
+        GROUP BY A./model/layers.6/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4479_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.6/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4480_dim1 AS onnx::MatMul_4480_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4480_dim1
+        FROM /model/layers.6/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4480 AS B
+          ON A./model/layers.6/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4480_dim0
+        GROUP BY A./model/layers.6/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4480_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.6/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4481_dim1 AS onnx::MatMul_4481_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4481_dim1
+        FROM /model/layers.6/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4481 AS B
+          ON A./model/layers.6/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4481_dim0
+        GROUP BY A./model/layers.6/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4481_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.6/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.6/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.6/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.6/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.6/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.6/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Transpose_output_0_dim0, A./model/layers.6/self_attn/Transpose_output_0_dim1, A./model/layers.6/self_attn/Transpose_output_0_dim2, A./model/layers.6/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.6/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.6/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.6/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.6/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Concat_output_0_dim0, A./model/layers.6/self_attn/Concat_output_0_dim1, A./model/layers.6/self_attn/Concat_output_0_dim2, A./model/layers.6/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.6/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.6/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.6/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.6/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Mul_output_0_dim0, A./model/layers.6/self_attn/Mul_output_0_dim1, A./model/layers.6/self_attn/Mul_output_0_dim2, A./model/layers.6/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.6/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.6/self_attn/Mul_output_0_dim0 = B./model/layers.6/self_attn/Mul_1_output_0_dim0 AND A./model/layers.6/self_attn/Mul_output_0_dim1 = B./model/layers.6/self_attn/Mul_1_output_0_dim1 AND A./model/layers.6/self_attn/Mul_output_0_dim2 = B./model/layers.6/self_attn/Mul_1_output_0_dim2 AND A./model/layers.6/self_attn/Mul_output_0_dim3 = B./model/layers.6/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Transpose_1_output_0_dim0, A./model/layers.6/self_attn/Transpose_1_output_0_dim1, A./model/layers.6/self_attn/Transpose_1_output_0_dim2, A./model/layers.6/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.6/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.6/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.6/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.6/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Concat_1_output_0_dim0, A./model/layers.6/self_attn/Concat_1_output_0_dim1, A./model/layers.6/self_attn/Concat_1_output_0_dim2, A./model/layers.6/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.6/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.6/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.6/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.6/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Mul_2_output_0_dim0, A./model/layers.6/self_attn/Mul_2_output_0_dim1, A./model/layers.6/self_attn/Mul_2_output_0_dim2, A./model/layers.6/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.6/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.6/self_attn/Mul_2_output_0_dim0 = B./model/layers.6/self_attn/Mul_3_output_0_dim0 AND A./model/layers.6/self_attn/Mul_2_output_0_dim1 = B./model/layers.6/self_attn/Mul_3_output_0_dim1 AND A./model/layers.6/self_attn/Mul_2_output_0_dim2 = B./model/layers.6/self_attn/Mul_3_output_0_dim2 AND A./model/layers.6/self_attn/Mul_2_output_0_dim3 = B./model/layers.6/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.6/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.6/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.6/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.6/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.6/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.6/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.6/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.6/self_attn/Constant_35_output_0_dim0 = B./model/layers.6/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Add_output_0 AS A
+        JOIN /model/layers.6/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.6/self_attn/Add_output_0_dim0 = B./model/layers.6/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.6/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.6/self_attn/Transpose_3_output_0_dim0 = B./model/layers.6/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Mul_6_output_0_dim0 AS /model/layers.6/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.6/self_attn/Mul_7_output_0_dim1 AS /model/layers.6/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/self_attn/Mul_6_output_0_dim0_/model/layers.6/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.6/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.6/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.6/self_attn/Mul_6_output_0_dim1 = B./model/layers.6/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.6/self_attn/Mul_6_output_0_dim0, B./model/layers.6/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/MatMul_output_0_dim0, A./model/layers.6/self_attn/MatMul_output_0_dim1, A./model/layers.6/self_attn/MatMul_output_0_dim2, A./model/layers.6/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.6/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.6/self_attn/MatMul_output_0_dim0 = B./model/layers.6/self_attn/Slice_4_output_0_dim0 AND A./model/layers.6/self_attn/MatMul_output_0_dim1 = B./model/layers.6/self_attn/Slice_4_output_0_dim1 AND A./model/layers.6/self_attn/MatMul_output_0_dim2 = B./model/layers.6/self_attn/Slice_4_output_0_dim2 AND A./model/layers.6/self_attn/MatMul_output_0_dim3 = B./model/layers.6/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.6/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.6/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.6/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.6/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.6/self_attn/Add_2_output_0_dim1, /model/layers.6/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.6/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.6/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Softmax_output_0_dim0 AS /model/layers.6/self_attn/Softmax_output_0_dim0,
+          B./model/layers.6/self_attn/Reshape_4_output_0_dim1 AS /model/layers.6/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/self_attn/Softmax_output_0_dim0_/model/layers.6/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.6/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.6/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.6/self_attn/Softmax_output_0_dim1 = B./model/layers.6/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.6/self_attn/Softmax_output_0_dim0, B./model/layers.6/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.6/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.6/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.6/self_attn/Reshape_5_output_0_dim0 AS /model/layers.6/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4547_dim1 AS onnx::MatMul_4547_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4547_dim1
+        FROM /model/layers.6/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4547 AS B
+          ON A./model/layers.6/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4547_dim0
+        GROUP BY A./model/layers.6/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4547_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/input_layernorm/Cast_output_0_dim0, A./model/layers.6/input_layernorm/Cast_output_0_dim1, A./model/layers.6/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.6/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.6/input_layernorm/Cast_output_0_dim0 = B./model/layers.6/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.6/input_layernorm/Cast_output_0_dim1 = B./model/layers.6/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.6/input_layernorm/Cast_output_0_dim2 = B./model/layers.6/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.6/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.6/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.6/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.6/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.6/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.6/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.6/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.6/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.6/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.6/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.6/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.6/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.6/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.6.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.6.post_attention_layernorm.weight AS A
+        JOIN /model/layers.6/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.6.post_attention_layernorm.weight_dim0 = B./model/layers.6/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4548_dim1 AS onnx::MatMul_4548_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4548_dim1
+        FROM /model/layers.6/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4548 AS B
+          ON A./model/layers.6/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4548_dim0
+        GROUP BY A./model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4548_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.6/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.6/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.6/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.6/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.6/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.6/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4549_dim1 AS onnx::MatMul_4549_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4549_dim1
+        FROM /model/layers.6/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4549 AS B
+          ON A./model/layers.6/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4549_dim0
+        GROUP BY A./model/layers.6/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4549_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/mlp/act_fn/Mul_output_0_dim0, A./model/layers.6/mlp/act_fn/Mul_output_0_dim1, A./model/layers.6/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.6/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.6/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.6/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.6/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.6/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.6/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.6/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.6/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.6/mlp/Mul_output_0_dim0 AS /model/layers.6/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4550_dim1 AS onnx::MatMul_4550_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.6/mlp/Mul_output_0_dim0_onnx::MatMul_4550_dim1
+        FROM /model/layers.6/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4550 AS B
+          ON A./model/layers.6/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4550_dim0
+        GROUP BY A./model/layers.6/mlp/Mul_output_0_dim0, B.onnx::MatMul_4550_dim1
+        
+
+
+        SELECT
+          A./model/layers.6/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.6/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.6/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.6/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.6/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.6/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.6/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.6/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.6/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.6/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.6/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.7/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.7/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.7/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.7/input_layernorm/Cast_output_0_dim0, A./model/layers.7/input_layernorm/Cast_output_0_dim1, A./model/layers.7/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.7/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.7/input_layernorm/Cast_output_0_dim0 = B./model/layers.7/input_layernorm/Div_output_0_dim0 AND A./model/layers.7/input_layernorm/Cast_output_0_dim1 = B./model/layers.7/input_layernorm/Div_output_0_dim1 AND A./model/layers.7/input_layernorm/Cast_output_0_dim2 = B./model/layers.7/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.7.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.7.input_layernorm.weight AS A
+        JOIN /model/layers.7/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.7.input_layernorm.weight_dim0 = B./model/layers.7/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.7/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.7/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4551_dim1 AS onnx::MatMul_4551_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4551_dim1
+        FROM /model/layers.7/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4551 AS B
+          ON A./model/layers.7/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4551_dim0
+        GROUP BY A./model/layers.7/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4551_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.7/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4552_dim1 AS onnx::MatMul_4552_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4552_dim1
+        FROM /model/layers.7/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4552 AS B
+          ON A./model/layers.7/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4552_dim0
+        GROUP BY A./model/layers.7/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4552_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.7/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4553_dim1 AS onnx::MatMul_4553_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4553_dim1
+        FROM /model/layers.7/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4553 AS B
+          ON A./model/layers.7/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4553_dim0
+        GROUP BY A./model/layers.7/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4553_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.7/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.7/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.7/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.7/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.7/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.7/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Transpose_output_0_dim0, A./model/layers.7/self_attn/Transpose_output_0_dim1, A./model/layers.7/self_attn/Transpose_output_0_dim2, A./model/layers.7/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.7/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.7/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.7/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.7/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Concat_output_0_dim0, A./model/layers.7/self_attn/Concat_output_0_dim1, A./model/layers.7/self_attn/Concat_output_0_dim2, A./model/layers.7/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.7/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.7/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.7/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.7/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Mul_output_0_dim0, A./model/layers.7/self_attn/Mul_output_0_dim1, A./model/layers.7/self_attn/Mul_output_0_dim2, A./model/layers.7/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.7/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.7/self_attn/Mul_output_0_dim0 = B./model/layers.7/self_attn/Mul_1_output_0_dim0 AND A./model/layers.7/self_attn/Mul_output_0_dim1 = B./model/layers.7/self_attn/Mul_1_output_0_dim1 AND A./model/layers.7/self_attn/Mul_output_0_dim2 = B./model/layers.7/self_attn/Mul_1_output_0_dim2 AND A./model/layers.7/self_attn/Mul_output_0_dim3 = B./model/layers.7/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Transpose_1_output_0_dim0, A./model/layers.7/self_attn/Transpose_1_output_0_dim1, A./model/layers.7/self_attn/Transpose_1_output_0_dim2, A./model/layers.7/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.7/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.7/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.7/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.7/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Concat_1_output_0_dim0, A./model/layers.7/self_attn/Concat_1_output_0_dim1, A./model/layers.7/self_attn/Concat_1_output_0_dim2, A./model/layers.7/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.7/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.7/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.7/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.7/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Mul_2_output_0_dim0, A./model/layers.7/self_attn/Mul_2_output_0_dim1, A./model/layers.7/self_attn/Mul_2_output_0_dim2, A./model/layers.7/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.7/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.7/self_attn/Mul_2_output_0_dim0 = B./model/layers.7/self_attn/Mul_3_output_0_dim0 AND A./model/layers.7/self_attn/Mul_2_output_0_dim1 = B./model/layers.7/self_attn/Mul_3_output_0_dim1 AND A./model/layers.7/self_attn/Mul_2_output_0_dim2 = B./model/layers.7/self_attn/Mul_3_output_0_dim2 AND A./model/layers.7/self_attn/Mul_2_output_0_dim3 = B./model/layers.7/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.7/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.7/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.7/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.7/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.7/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.7/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.7/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.7/self_attn/Constant_35_output_0_dim0 = B./model/layers.7/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Add_output_0 AS A
+        JOIN /model/layers.7/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.7/self_attn/Add_output_0_dim0 = B./model/layers.7/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.7/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.7/self_attn/Transpose_3_output_0_dim0 = B./model/layers.7/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Mul_6_output_0_dim0 AS /model/layers.7/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.7/self_attn/Mul_7_output_0_dim1 AS /model/layers.7/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/self_attn/Mul_6_output_0_dim0_/model/layers.7/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.7/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.7/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.7/self_attn/Mul_6_output_0_dim1 = B./model/layers.7/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.7/self_attn/Mul_6_output_0_dim0, B./model/layers.7/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/MatMul_output_0_dim0, A./model/layers.7/self_attn/MatMul_output_0_dim1, A./model/layers.7/self_attn/MatMul_output_0_dim2, A./model/layers.7/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.7/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.7/self_attn/MatMul_output_0_dim0 = B./model/layers.7/self_attn/Slice_4_output_0_dim0 AND A./model/layers.7/self_attn/MatMul_output_0_dim1 = B./model/layers.7/self_attn/Slice_4_output_0_dim1 AND A./model/layers.7/self_attn/MatMul_output_0_dim2 = B./model/layers.7/self_attn/Slice_4_output_0_dim2 AND A./model/layers.7/self_attn/MatMul_output_0_dim3 = B./model/layers.7/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.7/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.7/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.7/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.7/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.7/self_attn/Add_2_output_0_dim1, /model/layers.7/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.7/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.7/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Softmax_output_0_dim0 AS /model/layers.7/self_attn/Softmax_output_0_dim0,
+          B./model/layers.7/self_attn/Reshape_4_output_0_dim1 AS /model/layers.7/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/self_attn/Softmax_output_0_dim0_/model/layers.7/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.7/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.7/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.7/self_attn/Softmax_output_0_dim1 = B./model/layers.7/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.7/self_attn/Softmax_output_0_dim0, B./model/layers.7/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.7/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.7/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.7/self_attn/Reshape_5_output_0_dim0 AS /model/layers.7/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4619_dim1 AS onnx::MatMul_4619_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4619_dim1
+        FROM /model/layers.7/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4619 AS B
+          ON A./model/layers.7/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4619_dim0
+        GROUP BY A./model/layers.7/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4619_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/input_layernorm/Cast_output_0_dim0, A./model/layers.7/input_layernorm/Cast_output_0_dim1, A./model/layers.7/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.7/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.7/input_layernorm/Cast_output_0_dim0 = B./model/layers.7/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.7/input_layernorm/Cast_output_0_dim1 = B./model/layers.7/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.7/input_layernorm/Cast_output_0_dim2 = B./model/layers.7/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.7/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.7/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.7/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.7/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.7/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.7/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.7/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.7/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.7/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.7/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.7/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.7/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.7/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.7.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.7.post_attention_layernorm.weight AS A
+        JOIN /model/layers.7/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.7.post_attention_layernorm.weight_dim0 = B./model/layers.7/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4620_dim1 AS onnx::MatMul_4620_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4620_dim1
+        FROM /model/layers.7/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4620 AS B
+          ON A./model/layers.7/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4620_dim0
+        GROUP BY A./model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4620_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.7/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.7/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.7/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.7/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.7/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.7/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4621_dim1 AS onnx::MatMul_4621_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4621_dim1
+        FROM /model/layers.7/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4621 AS B
+          ON A./model/layers.7/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4621_dim0
+        GROUP BY A./model/layers.7/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4621_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/mlp/act_fn/Mul_output_0_dim0, A./model/layers.7/mlp/act_fn/Mul_output_0_dim1, A./model/layers.7/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.7/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.7/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.7/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.7/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.7/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.7/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.7/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.7/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.7/mlp/Mul_output_0_dim0 AS /model/layers.7/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4622_dim1 AS onnx::MatMul_4622_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.7/mlp/Mul_output_0_dim0_onnx::MatMul_4622_dim1
+        FROM /model/layers.7/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4622 AS B
+          ON A./model/layers.7/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4622_dim0
+        GROUP BY A./model/layers.7/mlp/Mul_output_0_dim0, B.onnx::MatMul_4622_dim1
+        
+
+
+        SELECT
+          A./model/layers.7/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.7/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.7/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.7/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.7/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.7/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.7/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.7/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.7/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.7/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.7/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.8/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.8/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.8/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.8/input_layernorm/Cast_output_0_dim0, A./model/layers.8/input_layernorm/Cast_output_0_dim1, A./model/layers.8/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.8/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.8/input_layernorm/Cast_output_0_dim0 = B./model/layers.8/input_layernorm/Div_output_0_dim0 AND A./model/layers.8/input_layernorm/Cast_output_0_dim1 = B./model/layers.8/input_layernorm/Div_output_0_dim1 AND A./model/layers.8/input_layernorm/Cast_output_0_dim2 = B./model/layers.8/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.8.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.8.input_layernorm.weight AS A
+        JOIN /model/layers.8/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.8.input_layernorm.weight_dim0 = B./model/layers.8/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.8/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.8/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4623_dim1 AS onnx::MatMul_4623_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4623_dim1
+        FROM /model/layers.8/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4623 AS B
+          ON A./model/layers.8/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4623_dim0
+        GROUP BY A./model/layers.8/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4623_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.8/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4624_dim1 AS onnx::MatMul_4624_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4624_dim1
+        FROM /model/layers.8/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4624 AS B
+          ON A./model/layers.8/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4624_dim0
+        GROUP BY A./model/layers.8/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4624_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.8/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4625_dim1 AS onnx::MatMul_4625_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4625_dim1
+        FROM /model/layers.8/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4625 AS B
+          ON A./model/layers.8/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4625_dim0
+        GROUP BY A./model/layers.8/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4625_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.8/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.8/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.8/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.8/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.8/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.8/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Transpose_output_0_dim0, A./model/layers.8/self_attn/Transpose_output_0_dim1, A./model/layers.8/self_attn/Transpose_output_0_dim2, A./model/layers.8/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.8/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.8/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.8/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.8/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Concat_output_0_dim0, A./model/layers.8/self_attn/Concat_output_0_dim1, A./model/layers.8/self_attn/Concat_output_0_dim2, A./model/layers.8/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.8/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.8/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.8/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.8/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Mul_output_0_dim0, A./model/layers.8/self_attn/Mul_output_0_dim1, A./model/layers.8/self_attn/Mul_output_0_dim2, A./model/layers.8/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.8/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.8/self_attn/Mul_output_0_dim0 = B./model/layers.8/self_attn/Mul_1_output_0_dim0 AND A./model/layers.8/self_attn/Mul_output_0_dim1 = B./model/layers.8/self_attn/Mul_1_output_0_dim1 AND A./model/layers.8/self_attn/Mul_output_0_dim2 = B./model/layers.8/self_attn/Mul_1_output_0_dim2 AND A./model/layers.8/self_attn/Mul_output_0_dim3 = B./model/layers.8/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Transpose_1_output_0_dim0, A./model/layers.8/self_attn/Transpose_1_output_0_dim1, A./model/layers.8/self_attn/Transpose_1_output_0_dim2, A./model/layers.8/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.8/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.8/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.8/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.8/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Concat_1_output_0_dim0, A./model/layers.8/self_attn/Concat_1_output_0_dim1, A./model/layers.8/self_attn/Concat_1_output_0_dim2, A./model/layers.8/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.8/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.8/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.8/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.8/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Mul_2_output_0_dim0, A./model/layers.8/self_attn/Mul_2_output_0_dim1, A./model/layers.8/self_attn/Mul_2_output_0_dim2, A./model/layers.8/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.8/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.8/self_attn/Mul_2_output_0_dim0 = B./model/layers.8/self_attn/Mul_3_output_0_dim0 AND A./model/layers.8/self_attn/Mul_2_output_0_dim1 = B./model/layers.8/self_attn/Mul_3_output_0_dim1 AND A./model/layers.8/self_attn/Mul_2_output_0_dim2 = B./model/layers.8/self_attn/Mul_3_output_0_dim2 AND A./model/layers.8/self_attn/Mul_2_output_0_dim3 = B./model/layers.8/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.8/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.8/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.8/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.8/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.8/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.8/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.8/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.8/self_attn/Constant_35_output_0_dim0 = B./model/layers.8/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Add_output_0 AS A
+        JOIN /model/layers.8/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.8/self_attn/Add_output_0_dim0 = B./model/layers.8/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.8/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.8/self_attn/Transpose_3_output_0_dim0 = B./model/layers.8/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Mul_6_output_0_dim0 AS /model/layers.8/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.8/self_attn/Mul_7_output_0_dim1 AS /model/layers.8/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/self_attn/Mul_6_output_0_dim0_/model/layers.8/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.8/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.8/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.8/self_attn/Mul_6_output_0_dim1 = B./model/layers.8/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.8/self_attn/Mul_6_output_0_dim0, B./model/layers.8/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/MatMul_output_0_dim0, A./model/layers.8/self_attn/MatMul_output_0_dim1, A./model/layers.8/self_attn/MatMul_output_0_dim2, A./model/layers.8/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.8/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.8/self_attn/MatMul_output_0_dim0 = B./model/layers.8/self_attn/Slice_4_output_0_dim0 AND A./model/layers.8/self_attn/MatMul_output_0_dim1 = B./model/layers.8/self_attn/Slice_4_output_0_dim1 AND A./model/layers.8/self_attn/MatMul_output_0_dim2 = B./model/layers.8/self_attn/Slice_4_output_0_dim2 AND A./model/layers.8/self_attn/MatMul_output_0_dim3 = B./model/layers.8/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.8/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.8/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.8/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.8/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.8/self_attn/Add_2_output_0_dim1, /model/layers.8/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.8/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.8/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Softmax_output_0_dim0 AS /model/layers.8/self_attn/Softmax_output_0_dim0,
+          B./model/layers.8/self_attn/Reshape_4_output_0_dim1 AS /model/layers.8/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/self_attn/Softmax_output_0_dim0_/model/layers.8/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.8/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.8/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.8/self_attn/Softmax_output_0_dim1 = B./model/layers.8/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.8/self_attn/Softmax_output_0_dim0, B./model/layers.8/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.8/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.8/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.8/self_attn/Reshape_5_output_0_dim0 AS /model/layers.8/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4691_dim1 AS onnx::MatMul_4691_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4691_dim1
+        FROM /model/layers.8/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4691 AS B
+          ON A./model/layers.8/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4691_dim0
+        GROUP BY A./model/layers.8/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4691_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/input_layernorm/Cast_output_0_dim0, A./model/layers.8/input_layernorm/Cast_output_0_dim1, A./model/layers.8/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.8/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.8/input_layernorm/Cast_output_0_dim0 = B./model/layers.8/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.8/input_layernorm/Cast_output_0_dim1 = B./model/layers.8/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.8/input_layernorm/Cast_output_0_dim2 = B./model/layers.8/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.8/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.8/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.8/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.8/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.8/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.8/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.8/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.8/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.8/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.8/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.8/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.8/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.8/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.8.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.8.post_attention_layernorm.weight AS A
+        JOIN /model/layers.8/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.8.post_attention_layernorm.weight_dim0 = B./model/layers.8/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4692_dim1 AS onnx::MatMul_4692_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4692_dim1
+        FROM /model/layers.8/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4692 AS B
+          ON A./model/layers.8/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4692_dim0
+        GROUP BY A./model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4692_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.8/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.8/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.8/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.8/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.8/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.8/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4693_dim1 AS onnx::MatMul_4693_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4693_dim1
+        FROM /model/layers.8/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4693 AS B
+          ON A./model/layers.8/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4693_dim0
+        GROUP BY A./model/layers.8/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4693_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/mlp/act_fn/Mul_output_0_dim0, A./model/layers.8/mlp/act_fn/Mul_output_0_dim1, A./model/layers.8/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.8/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.8/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.8/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.8/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.8/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.8/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.8/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.8/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.8/mlp/Mul_output_0_dim0 AS /model/layers.8/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4694_dim1 AS onnx::MatMul_4694_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.8/mlp/Mul_output_0_dim0_onnx::MatMul_4694_dim1
+        FROM /model/layers.8/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4694 AS B
+          ON A./model/layers.8/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4694_dim0
+        GROUP BY A./model/layers.8/mlp/Mul_output_0_dim0, B.onnx::MatMul_4694_dim1
+        
+
+
+        SELECT
+          A./model/layers.8/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.8/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.8/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.8/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.8/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.8/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.8/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.8/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.8/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.8/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.8/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.9/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.9/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.9/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.9/input_layernorm/Cast_output_0_dim0, A./model/layers.9/input_layernorm/Cast_output_0_dim1, A./model/layers.9/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.9/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.9/input_layernorm/Cast_output_0_dim0 = B./model/layers.9/input_layernorm/Div_output_0_dim0 AND A./model/layers.9/input_layernorm/Cast_output_0_dim1 = B./model/layers.9/input_layernorm/Div_output_0_dim1 AND A./model/layers.9/input_layernorm/Cast_output_0_dim2 = B./model/layers.9/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.9.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.9.input_layernorm.weight AS A
+        JOIN /model/layers.9/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.9.input_layernorm.weight_dim0 = B./model/layers.9/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.9/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.9/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4695_dim1 AS onnx::MatMul_4695_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4695_dim1
+        FROM /model/layers.9/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4695 AS B
+          ON A./model/layers.9/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4695_dim0
+        GROUP BY A./model/layers.9/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4695_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.9/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4696_dim1 AS onnx::MatMul_4696_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4696_dim1
+        FROM /model/layers.9/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4696 AS B
+          ON A./model/layers.9/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4696_dim0
+        GROUP BY A./model/layers.9/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4696_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.9/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4697_dim1 AS onnx::MatMul_4697_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4697_dim1
+        FROM /model/layers.9/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4697 AS B
+          ON A./model/layers.9/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4697_dim0
+        GROUP BY A./model/layers.9/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4697_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.9/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.9/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.9/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.9/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.9/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.9/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Transpose_output_0_dim0, A./model/layers.9/self_attn/Transpose_output_0_dim1, A./model/layers.9/self_attn/Transpose_output_0_dim2, A./model/layers.9/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.9/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.9/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.9/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.9/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Concat_output_0_dim0, A./model/layers.9/self_attn/Concat_output_0_dim1, A./model/layers.9/self_attn/Concat_output_0_dim2, A./model/layers.9/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.9/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.9/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.9/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.9/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Mul_output_0_dim0, A./model/layers.9/self_attn/Mul_output_0_dim1, A./model/layers.9/self_attn/Mul_output_0_dim2, A./model/layers.9/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.9/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.9/self_attn/Mul_output_0_dim0 = B./model/layers.9/self_attn/Mul_1_output_0_dim0 AND A./model/layers.9/self_attn/Mul_output_0_dim1 = B./model/layers.9/self_attn/Mul_1_output_0_dim1 AND A./model/layers.9/self_attn/Mul_output_0_dim2 = B./model/layers.9/self_attn/Mul_1_output_0_dim2 AND A./model/layers.9/self_attn/Mul_output_0_dim3 = B./model/layers.9/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Transpose_1_output_0_dim0, A./model/layers.9/self_attn/Transpose_1_output_0_dim1, A./model/layers.9/self_attn/Transpose_1_output_0_dim2, A./model/layers.9/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.9/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.9/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.9/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.9/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Concat_1_output_0_dim0, A./model/layers.9/self_attn/Concat_1_output_0_dim1, A./model/layers.9/self_attn/Concat_1_output_0_dim2, A./model/layers.9/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.9/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.9/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.9/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.9/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Mul_2_output_0_dim0, A./model/layers.9/self_attn/Mul_2_output_0_dim1, A./model/layers.9/self_attn/Mul_2_output_0_dim2, A./model/layers.9/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.9/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.9/self_attn/Mul_2_output_0_dim0 = B./model/layers.9/self_attn/Mul_3_output_0_dim0 AND A./model/layers.9/self_attn/Mul_2_output_0_dim1 = B./model/layers.9/self_attn/Mul_3_output_0_dim1 AND A./model/layers.9/self_attn/Mul_2_output_0_dim2 = B./model/layers.9/self_attn/Mul_3_output_0_dim2 AND A./model/layers.9/self_attn/Mul_2_output_0_dim3 = B./model/layers.9/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.9/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.9/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.9/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.9/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.9/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.9/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.9/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.9/self_attn/Constant_35_output_0_dim0 = B./model/layers.9/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Add_output_0 AS A
+        JOIN /model/layers.9/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.9/self_attn/Add_output_0_dim0 = B./model/layers.9/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.9/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.9/self_attn/Transpose_3_output_0_dim0 = B./model/layers.9/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Mul_6_output_0_dim0 AS /model/layers.9/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.9/self_attn/Mul_7_output_0_dim1 AS /model/layers.9/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/self_attn/Mul_6_output_0_dim0_/model/layers.9/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.9/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.9/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.9/self_attn/Mul_6_output_0_dim1 = B./model/layers.9/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.9/self_attn/Mul_6_output_0_dim0, B./model/layers.9/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/MatMul_output_0_dim0, A./model/layers.9/self_attn/MatMul_output_0_dim1, A./model/layers.9/self_attn/MatMul_output_0_dim2, A./model/layers.9/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.9/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.9/self_attn/MatMul_output_0_dim0 = B./model/layers.9/self_attn/Slice_4_output_0_dim0 AND A./model/layers.9/self_attn/MatMul_output_0_dim1 = B./model/layers.9/self_attn/Slice_4_output_0_dim1 AND A./model/layers.9/self_attn/MatMul_output_0_dim2 = B./model/layers.9/self_attn/Slice_4_output_0_dim2 AND A./model/layers.9/self_attn/MatMul_output_0_dim3 = B./model/layers.9/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.9/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.9/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.9/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.9/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.9/self_attn/Add_2_output_0_dim1, /model/layers.9/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.9/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.9/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Softmax_output_0_dim0 AS /model/layers.9/self_attn/Softmax_output_0_dim0,
+          B./model/layers.9/self_attn/Reshape_4_output_0_dim1 AS /model/layers.9/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/self_attn/Softmax_output_0_dim0_/model/layers.9/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.9/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.9/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.9/self_attn/Softmax_output_0_dim1 = B./model/layers.9/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.9/self_attn/Softmax_output_0_dim0, B./model/layers.9/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.9/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.9/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.9/self_attn/Reshape_5_output_0_dim0 AS /model/layers.9/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4763_dim1 AS onnx::MatMul_4763_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4763_dim1
+        FROM /model/layers.9/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4763 AS B
+          ON A./model/layers.9/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4763_dim0
+        GROUP BY A./model/layers.9/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4763_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/input_layernorm/Cast_output_0_dim0, A./model/layers.9/input_layernorm/Cast_output_0_dim1, A./model/layers.9/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.9/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.9/input_layernorm/Cast_output_0_dim0 = B./model/layers.9/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.9/input_layernorm/Cast_output_0_dim1 = B./model/layers.9/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.9/input_layernorm/Cast_output_0_dim2 = B./model/layers.9/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.9/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.9/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.9/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.9/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.9/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.9/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.9/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.9/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.9/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.9/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.9/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.9/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.9/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.9.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.9.post_attention_layernorm.weight AS A
+        JOIN /model/layers.9/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.9.post_attention_layernorm.weight_dim0 = B./model/layers.9/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4764_dim1 AS onnx::MatMul_4764_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4764_dim1
+        FROM /model/layers.9/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4764 AS B
+          ON A./model/layers.9/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4764_dim0
+        GROUP BY A./model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4764_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.9/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.9/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.9/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.9/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.9/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.9/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4765_dim1 AS onnx::MatMul_4765_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4765_dim1
+        FROM /model/layers.9/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4765 AS B
+          ON A./model/layers.9/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4765_dim0
+        GROUP BY A./model/layers.9/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4765_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/mlp/act_fn/Mul_output_0_dim0, A./model/layers.9/mlp/act_fn/Mul_output_0_dim1, A./model/layers.9/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.9/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.9/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.9/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.9/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.9/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.9/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.9/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.9/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.9/mlp/Mul_output_0_dim0 AS /model/layers.9/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4766_dim1 AS onnx::MatMul_4766_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.9/mlp/Mul_output_0_dim0_onnx::MatMul_4766_dim1
+        FROM /model/layers.9/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4766 AS B
+          ON A./model/layers.9/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4766_dim0
+        GROUP BY A./model/layers.9/mlp/Mul_output_0_dim0, B.onnx::MatMul_4766_dim1
+        
+
+
+        SELECT
+          A./model/layers.9/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.9/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.9/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.9/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.9/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.9/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.9/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.9/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.9/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.9/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.9/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.10/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.10/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.10/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.10/input_layernorm/Cast_output_0_dim0, A./model/layers.10/input_layernorm/Cast_output_0_dim1, A./model/layers.10/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.10/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.10/input_layernorm/Cast_output_0_dim0 = B./model/layers.10/input_layernorm/Div_output_0_dim0 AND A./model/layers.10/input_layernorm/Cast_output_0_dim1 = B./model/layers.10/input_layernorm/Div_output_0_dim1 AND A./model/layers.10/input_layernorm/Cast_output_0_dim2 = B./model/layers.10/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.10.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.10.input_layernorm.weight AS A
+        JOIN /model/layers.10/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.10.input_layernorm.weight_dim0 = B./model/layers.10/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.10/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.10/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4767_dim1 AS onnx::MatMul_4767_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4767_dim1
+        FROM /model/layers.10/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4767 AS B
+          ON A./model/layers.10/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4767_dim0
+        GROUP BY A./model/layers.10/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4767_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.10/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4768_dim1 AS onnx::MatMul_4768_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4768_dim1
+        FROM /model/layers.10/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4768 AS B
+          ON A./model/layers.10/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4768_dim0
+        GROUP BY A./model/layers.10/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4768_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.10/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4769_dim1 AS onnx::MatMul_4769_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4769_dim1
+        FROM /model/layers.10/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4769 AS B
+          ON A./model/layers.10/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4769_dim0
+        GROUP BY A./model/layers.10/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4769_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.10/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.10/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.10/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.10/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.10/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.10/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Transpose_output_0_dim0, A./model/layers.10/self_attn/Transpose_output_0_dim1, A./model/layers.10/self_attn/Transpose_output_0_dim2, A./model/layers.10/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.10/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.10/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.10/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.10/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Concat_output_0_dim0, A./model/layers.10/self_attn/Concat_output_0_dim1, A./model/layers.10/self_attn/Concat_output_0_dim2, A./model/layers.10/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.10/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.10/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.10/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.10/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Mul_output_0_dim0, A./model/layers.10/self_attn/Mul_output_0_dim1, A./model/layers.10/self_attn/Mul_output_0_dim2, A./model/layers.10/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.10/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.10/self_attn/Mul_output_0_dim0 = B./model/layers.10/self_attn/Mul_1_output_0_dim0 AND A./model/layers.10/self_attn/Mul_output_0_dim1 = B./model/layers.10/self_attn/Mul_1_output_0_dim1 AND A./model/layers.10/self_attn/Mul_output_0_dim2 = B./model/layers.10/self_attn/Mul_1_output_0_dim2 AND A./model/layers.10/self_attn/Mul_output_0_dim3 = B./model/layers.10/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Transpose_1_output_0_dim0, A./model/layers.10/self_attn/Transpose_1_output_0_dim1, A./model/layers.10/self_attn/Transpose_1_output_0_dim2, A./model/layers.10/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.10/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.10/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.10/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.10/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Concat_1_output_0_dim0, A./model/layers.10/self_attn/Concat_1_output_0_dim1, A./model/layers.10/self_attn/Concat_1_output_0_dim2, A./model/layers.10/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.10/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.10/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.10/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.10/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Mul_2_output_0_dim0, A./model/layers.10/self_attn/Mul_2_output_0_dim1, A./model/layers.10/self_attn/Mul_2_output_0_dim2, A./model/layers.10/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.10/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.10/self_attn/Mul_2_output_0_dim0 = B./model/layers.10/self_attn/Mul_3_output_0_dim0 AND A./model/layers.10/self_attn/Mul_2_output_0_dim1 = B./model/layers.10/self_attn/Mul_3_output_0_dim1 AND A./model/layers.10/self_attn/Mul_2_output_0_dim2 = B./model/layers.10/self_attn/Mul_3_output_0_dim2 AND A./model/layers.10/self_attn/Mul_2_output_0_dim3 = B./model/layers.10/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.10/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.10/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.10/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.10/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.10/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.10/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.10/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.10/self_attn/Constant_35_output_0_dim0 = B./model/layers.10/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Add_output_0 AS A
+        JOIN /model/layers.10/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.10/self_attn/Add_output_0_dim0 = B./model/layers.10/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.10/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.10/self_attn/Transpose_3_output_0_dim0 = B./model/layers.10/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Mul_6_output_0_dim0 AS /model/layers.10/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.10/self_attn/Mul_7_output_0_dim1 AS /model/layers.10/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/self_attn/Mul_6_output_0_dim0_/model/layers.10/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.10/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.10/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.10/self_attn/Mul_6_output_0_dim1 = B./model/layers.10/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.10/self_attn/Mul_6_output_0_dim0, B./model/layers.10/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/MatMul_output_0_dim0, A./model/layers.10/self_attn/MatMul_output_0_dim1, A./model/layers.10/self_attn/MatMul_output_0_dim2, A./model/layers.10/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.10/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.10/self_attn/MatMul_output_0_dim0 = B./model/layers.10/self_attn/Slice_4_output_0_dim0 AND A./model/layers.10/self_attn/MatMul_output_0_dim1 = B./model/layers.10/self_attn/Slice_4_output_0_dim1 AND A./model/layers.10/self_attn/MatMul_output_0_dim2 = B./model/layers.10/self_attn/Slice_4_output_0_dim2 AND A./model/layers.10/self_attn/MatMul_output_0_dim3 = B./model/layers.10/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.10/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.10/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.10/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.10/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.10/self_attn/Add_2_output_0_dim1, /model/layers.10/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.10/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.10/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Softmax_output_0_dim0 AS /model/layers.10/self_attn/Softmax_output_0_dim0,
+          B./model/layers.10/self_attn/Reshape_4_output_0_dim1 AS /model/layers.10/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/self_attn/Softmax_output_0_dim0_/model/layers.10/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.10/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.10/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.10/self_attn/Softmax_output_0_dim1 = B./model/layers.10/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.10/self_attn/Softmax_output_0_dim0, B./model/layers.10/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.10/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.10/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.10/self_attn/Reshape_5_output_0_dim0 AS /model/layers.10/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4835_dim1 AS onnx::MatMul_4835_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4835_dim1
+        FROM /model/layers.10/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4835 AS B
+          ON A./model/layers.10/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4835_dim0
+        GROUP BY A./model/layers.10/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4835_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/input_layernorm/Cast_output_0_dim0, A./model/layers.10/input_layernorm/Cast_output_0_dim1, A./model/layers.10/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.10/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.10/input_layernorm/Cast_output_0_dim0 = B./model/layers.10/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.10/input_layernorm/Cast_output_0_dim1 = B./model/layers.10/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.10/input_layernorm/Cast_output_0_dim2 = B./model/layers.10/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.10/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.10/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.10/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.10/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.10/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.10/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.10/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.10/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.10/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.10/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.10/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.10/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.10/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.10.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.10.post_attention_layernorm.weight AS A
+        JOIN /model/layers.10/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.10.post_attention_layernorm.weight_dim0 = B./model/layers.10/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4836_dim1 AS onnx::MatMul_4836_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4836_dim1
+        FROM /model/layers.10/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4836 AS B
+          ON A./model/layers.10/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4836_dim0
+        GROUP BY A./model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4836_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.10/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.10/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.10/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.10/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.10/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.10/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4837_dim1 AS onnx::MatMul_4837_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4837_dim1
+        FROM /model/layers.10/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4837 AS B
+          ON A./model/layers.10/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4837_dim0
+        GROUP BY A./model/layers.10/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4837_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/mlp/act_fn/Mul_output_0_dim0, A./model/layers.10/mlp/act_fn/Mul_output_0_dim1, A./model/layers.10/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.10/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.10/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.10/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.10/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.10/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.10/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.10/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.10/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.10/mlp/Mul_output_0_dim0 AS /model/layers.10/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4838_dim1 AS onnx::MatMul_4838_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.10/mlp/Mul_output_0_dim0_onnx::MatMul_4838_dim1
+        FROM /model/layers.10/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4838 AS B
+          ON A./model/layers.10/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4838_dim0
+        GROUP BY A./model/layers.10/mlp/Mul_output_0_dim0, B.onnx::MatMul_4838_dim1
+        
+
+
+        SELECT
+          A./model/layers.10/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.10/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.10/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.10/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.10/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.10/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.10/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.10/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.10/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.10/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.10/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.11/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.11/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.11/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.11/input_layernorm/Cast_output_0_dim0, A./model/layers.11/input_layernorm/Cast_output_0_dim1, A./model/layers.11/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.11/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.11/input_layernorm/Cast_output_0_dim0 = B./model/layers.11/input_layernorm/Div_output_0_dim0 AND A./model/layers.11/input_layernorm/Cast_output_0_dim1 = B./model/layers.11/input_layernorm/Div_output_0_dim1 AND A./model/layers.11/input_layernorm/Cast_output_0_dim2 = B./model/layers.11/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.11.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.11.input_layernorm.weight AS A
+        JOIN /model/layers.11/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.11.input_layernorm.weight_dim0 = B./model/layers.11/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.11/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.11/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4839_dim1 AS onnx::MatMul_4839_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4839_dim1
+        FROM /model/layers.11/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4839 AS B
+          ON A./model/layers.11/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4839_dim0
+        GROUP BY A./model/layers.11/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4839_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.11/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4840_dim1 AS onnx::MatMul_4840_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4840_dim1
+        FROM /model/layers.11/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4840 AS B
+          ON A./model/layers.11/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4840_dim0
+        GROUP BY A./model/layers.11/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4840_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.11/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4841_dim1 AS onnx::MatMul_4841_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4841_dim1
+        FROM /model/layers.11/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4841 AS B
+          ON A./model/layers.11/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4841_dim0
+        GROUP BY A./model/layers.11/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4841_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.11/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.11/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.11/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.11/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.11/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.11/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Transpose_output_0_dim0, A./model/layers.11/self_attn/Transpose_output_0_dim1, A./model/layers.11/self_attn/Transpose_output_0_dim2, A./model/layers.11/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.11/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.11/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.11/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.11/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Concat_output_0_dim0, A./model/layers.11/self_attn/Concat_output_0_dim1, A./model/layers.11/self_attn/Concat_output_0_dim2, A./model/layers.11/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.11/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.11/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.11/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.11/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Mul_output_0_dim0, A./model/layers.11/self_attn/Mul_output_0_dim1, A./model/layers.11/self_attn/Mul_output_0_dim2, A./model/layers.11/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.11/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.11/self_attn/Mul_output_0_dim0 = B./model/layers.11/self_attn/Mul_1_output_0_dim0 AND A./model/layers.11/self_attn/Mul_output_0_dim1 = B./model/layers.11/self_attn/Mul_1_output_0_dim1 AND A./model/layers.11/self_attn/Mul_output_0_dim2 = B./model/layers.11/self_attn/Mul_1_output_0_dim2 AND A./model/layers.11/self_attn/Mul_output_0_dim3 = B./model/layers.11/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Transpose_1_output_0_dim0, A./model/layers.11/self_attn/Transpose_1_output_0_dim1, A./model/layers.11/self_attn/Transpose_1_output_0_dim2, A./model/layers.11/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.11/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.11/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.11/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.11/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Concat_1_output_0_dim0, A./model/layers.11/self_attn/Concat_1_output_0_dim1, A./model/layers.11/self_attn/Concat_1_output_0_dim2, A./model/layers.11/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.11/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.11/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.11/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.11/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Mul_2_output_0_dim0, A./model/layers.11/self_attn/Mul_2_output_0_dim1, A./model/layers.11/self_attn/Mul_2_output_0_dim2, A./model/layers.11/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.11/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.11/self_attn/Mul_2_output_0_dim0 = B./model/layers.11/self_attn/Mul_3_output_0_dim0 AND A./model/layers.11/self_attn/Mul_2_output_0_dim1 = B./model/layers.11/self_attn/Mul_3_output_0_dim1 AND A./model/layers.11/self_attn/Mul_2_output_0_dim2 = B./model/layers.11/self_attn/Mul_3_output_0_dim2 AND A./model/layers.11/self_attn/Mul_2_output_0_dim3 = B./model/layers.11/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.11/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.11/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.11/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.11/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.11/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.11/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.11/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.11/self_attn/Constant_35_output_0_dim0 = B./model/layers.11/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Add_output_0 AS A
+        JOIN /model/layers.11/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.11/self_attn/Add_output_0_dim0 = B./model/layers.11/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.11/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.11/self_attn/Transpose_3_output_0_dim0 = B./model/layers.11/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Mul_6_output_0_dim0 AS /model/layers.11/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.11/self_attn/Mul_7_output_0_dim1 AS /model/layers.11/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/self_attn/Mul_6_output_0_dim0_/model/layers.11/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.11/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.11/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.11/self_attn/Mul_6_output_0_dim1 = B./model/layers.11/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.11/self_attn/Mul_6_output_0_dim0, B./model/layers.11/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/MatMul_output_0_dim0, A./model/layers.11/self_attn/MatMul_output_0_dim1, A./model/layers.11/self_attn/MatMul_output_0_dim2, A./model/layers.11/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.11/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.11/self_attn/MatMul_output_0_dim0 = B./model/layers.11/self_attn/Slice_4_output_0_dim0 AND A./model/layers.11/self_attn/MatMul_output_0_dim1 = B./model/layers.11/self_attn/Slice_4_output_0_dim1 AND A./model/layers.11/self_attn/MatMul_output_0_dim2 = B./model/layers.11/self_attn/Slice_4_output_0_dim2 AND A./model/layers.11/self_attn/MatMul_output_0_dim3 = B./model/layers.11/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.11/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.11/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.11/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.11/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.11/self_attn/Add_2_output_0_dim1, /model/layers.11/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.11/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.11/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Softmax_output_0_dim0 AS /model/layers.11/self_attn/Softmax_output_0_dim0,
+          B./model/layers.11/self_attn/Reshape_4_output_0_dim1 AS /model/layers.11/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/self_attn/Softmax_output_0_dim0_/model/layers.11/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.11/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.11/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.11/self_attn/Softmax_output_0_dim1 = B./model/layers.11/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.11/self_attn/Softmax_output_0_dim0, B./model/layers.11/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.11/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.11/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.11/self_attn/Reshape_5_output_0_dim0 AS /model/layers.11/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4907_dim1 AS onnx::MatMul_4907_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4907_dim1
+        FROM /model/layers.11/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4907 AS B
+          ON A./model/layers.11/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4907_dim0
+        GROUP BY A./model/layers.11/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4907_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/input_layernorm/Cast_output_0_dim0, A./model/layers.11/input_layernorm/Cast_output_0_dim1, A./model/layers.11/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.11/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.11/input_layernorm/Cast_output_0_dim0 = B./model/layers.11/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.11/input_layernorm/Cast_output_0_dim1 = B./model/layers.11/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.11/input_layernorm/Cast_output_0_dim2 = B./model/layers.11/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.11/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.11/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.11/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.11/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.11/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.11/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.11/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.11/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.11/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.11/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.11/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.11/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.11/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.11.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.11.post_attention_layernorm.weight AS A
+        JOIN /model/layers.11/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.11.post_attention_layernorm.weight_dim0 = B./model/layers.11/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4908_dim1 AS onnx::MatMul_4908_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4908_dim1
+        FROM /model/layers.11/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4908 AS B
+          ON A./model/layers.11/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4908_dim0
+        GROUP BY A./model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4908_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.11/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.11/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.11/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.11/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.11/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.11/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4909_dim1 AS onnx::MatMul_4909_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4909_dim1
+        FROM /model/layers.11/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4909 AS B
+          ON A./model/layers.11/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4909_dim0
+        GROUP BY A./model/layers.11/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4909_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/mlp/act_fn/Mul_output_0_dim0, A./model/layers.11/mlp/act_fn/Mul_output_0_dim1, A./model/layers.11/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.11/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.11/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.11/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.11/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.11/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.11/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.11/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.11/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.11/mlp/Mul_output_0_dim0 AS /model/layers.11/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4910_dim1 AS onnx::MatMul_4910_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.11/mlp/Mul_output_0_dim0_onnx::MatMul_4910_dim1
+        FROM /model/layers.11/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4910 AS B
+          ON A./model/layers.11/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4910_dim0
+        GROUP BY A./model/layers.11/mlp/Mul_output_0_dim0, B.onnx::MatMul_4910_dim1
+        
+
+
+        SELECT
+          A./model/layers.11/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.11/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.11/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.11/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.11/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.11/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.11/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.11/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.11/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.11/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.11/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.12/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.12/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.12/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.12/input_layernorm/Cast_output_0_dim0, A./model/layers.12/input_layernorm/Cast_output_0_dim1, A./model/layers.12/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.12/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.12/input_layernorm/Cast_output_0_dim0 = B./model/layers.12/input_layernorm/Div_output_0_dim0 AND A./model/layers.12/input_layernorm/Cast_output_0_dim1 = B./model/layers.12/input_layernorm/Div_output_0_dim1 AND A./model/layers.12/input_layernorm/Cast_output_0_dim2 = B./model/layers.12/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.12.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.12.input_layernorm.weight AS A
+        JOIN /model/layers.12/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.12.input_layernorm.weight_dim0 = B./model/layers.12/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.12/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.12/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4911_dim1 AS onnx::MatMul_4911_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4911_dim1
+        FROM /model/layers.12/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4911 AS B
+          ON A./model/layers.12/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4911_dim0
+        GROUP BY A./model/layers.12/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4911_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.12/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4912_dim1 AS onnx::MatMul_4912_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4912_dim1
+        FROM /model/layers.12/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4912 AS B
+          ON A./model/layers.12/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4912_dim0
+        GROUP BY A./model/layers.12/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4912_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.12/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4913_dim1 AS onnx::MatMul_4913_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4913_dim1
+        FROM /model/layers.12/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4913 AS B
+          ON A./model/layers.12/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4913_dim0
+        GROUP BY A./model/layers.12/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4913_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.12/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.12/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.12/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.12/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.12/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.12/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Transpose_output_0_dim0, A./model/layers.12/self_attn/Transpose_output_0_dim1, A./model/layers.12/self_attn/Transpose_output_0_dim2, A./model/layers.12/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.12/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.12/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.12/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.12/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Concat_output_0_dim0, A./model/layers.12/self_attn/Concat_output_0_dim1, A./model/layers.12/self_attn/Concat_output_0_dim2, A./model/layers.12/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.12/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.12/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.12/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.12/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Mul_output_0_dim0, A./model/layers.12/self_attn/Mul_output_0_dim1, A./model/layers.12/self_attn/Mul_output_0_dim2, A./model/layers.12/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.12/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.12/self_attn/Mul_output_0_dim0 = B./model/layers.12/self_attn/Mul_1_output_0_dim0 AND A./model/layers.12/self_attn/Mul_output_0_dim1 = B./model/layers.12/self_attn/Mul_1_output_0_dim1 AND A./model/layers.12/self_attn/Mul_output_0_dim2 = B./model/layers.12/self_attn/Mul_1_output_0_dim2 AND A./model/layers.12/self_attn/Mul_output_0_dim3 = B./model/layers.12/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Transpose_1_output_0_dim0, A./model/layers.12/self_attn/Transpose_1_output_0_dim1, A./model/layers.12/self_attn/Transpose_1_output_0_dim2, A./model/layers.12/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.12/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.12/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.12/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.12/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Concat_1_output_0_dim0, A./model/layers.12/self_attn/Concat_1_output_0_dim1, A./model/layers.12/self_attn/Concat_1_output_0_dim2, A./model/layers.12/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.12/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.12/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.12/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.12/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Mul_2_output_0_dim0, A./model/layers.12/self_attn/Mul_2_output_0_dim1, A./model/layers.12/self_attn/Mul_2_output_0_dim2, A./model/layers.12/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.12/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.12/self_attn/Mul_2_output_0_dim0 = B./model/layers.12/self_attn/Mul_3_output_0_dim0 AND A./model/layers.12/self_attn/Mul_2_output_0_dim1 = B./model/layers.12/self_attn/Mul_3_output_0_dim1 AND A./model/layers.12/self_attn/Mul_2_output_0_dim2 = B./model/layers.12/self_attn/Mul_3_output_0_dim2 AND A./model/layers.12/self_attn/Mul_2_output_0_dim3 = B./model/layers.12/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.12/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.12/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.12/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.12/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.12/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.12/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.12/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.12/self_attn/Constant_35_output_0_dim0 = B./model/layers.12/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Add_output_0 AS A
+        JOIN /model/layers.12/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.12/self_attn/Add_output_0_dim0 = B./model/layers.12/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.12/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.12/self_attn/Transpose_3_output_0_dim0 = B./model/layers.12/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Mul_6_output_0_dim0 AS /model/layers.12/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.12/self_attn/Mul_7_output_0_dim1 AS /model/layers.12/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/self_attn/Mul_6_output_0_dim0_/model/layers.12/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.12/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.12/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.12/self_attn/Mul_6_output_0_dim1 = B./model/layers.12/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.12/self_attn/Mul_6_output_0_dim0, B./model/layers.12/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/MatMul_output_0_dim0, A./model/layers.12/self_attn/MatMul_output_0_dim1, A./model/layers.12/self_attn/MatMul_output_0_dim2, A./model/layers.12/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.12/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.12/self_attn/MatMul_output_0_dim0 = B./model/layers.12/self_attn/Slice_4_output_0_dim0 AND A./model/layers.12/self_attn/MatMul_output_0_dim1 = B./model/layers.12/self_attn/Slice_4_output_0_dim1 AND A./model/layers.12/self_attn/MatMul_output_0_dim2 = B./model/layers.12/self_attn/Slice_4_output_0_dim2 AND A./model/layers.12/self_attn/MatMul_output_0_dim3 = B./model/layers.12/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.12/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.12/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.12/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.12/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.12/self_attn/Add_2_output_0_dim1, /model/layers.12/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.12/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.12/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Softmax_output_0_dim0 AS /model/layers.12/self_attn/Softmax_output_0_dim0,
+          B./model/layers.12/self_attn/Reshape_4_output_0_dim1 AS /model/layers.12/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/self_attn/Softmax_output_0_dim0_/model/layers.12/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.12/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.12/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.12/self_attn/Softmax_output_0_dim1 = B./model/layers.12/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.12/self_attn/Softmax_output_0_dim0, B./model/layers.12/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.12/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.12/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.12/self_attn/Reshape_5_output_0_dim0 AS /model/layers.12/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_4979_dim1 AS onnx::MatMul_4979_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_4979_dim1
+        FROM /model/layers.12/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_4979 AS B
+          ON A./model/layers.12/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_4979_dim0
+        GROUP BY A./model/layers.12/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_4979_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/input_layernorm/Cast_output_0_dim0, A./model/layers.12/input_layernorm/Cast_output_0_dim1, A./model/layers.12/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.12/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.12/input_layernorm/Cast_output_0_dim0 = B./model/layers.12/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.12/input_layernorm/Cast_output_0_dim1 = B./model/layers.12/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.12/input_layernorm/Cast_output_0_dim2 = B./model/layers.12/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.12/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.12/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.12/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.12/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.12/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.12/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.12/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.12/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.12/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.12/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.12/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.12/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.12/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.12.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.12.post_attention_layernorm.weight AS A
+        JOIN /model/layers.12/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.12.post_attention_layernorm.weight_dim0 = B./model/layers.12/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4980_dim1 AS onnx::MatMul_4980_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4980_dim1
+        FROM /model/layers.12/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4980 AS B
+          ON A./model/layers.12/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4980_dim0
+        GROUP BY A./model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4980_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.12/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.12/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.12/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.12/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.12/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.12/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4981_dim1 AS onnx::MatMul_4981_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4981_dim1
+        FROM /model/layers.12/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4981 AS B
+          ON A./model/layers.12/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4981_dim0
+        GROUP BY A./model/layers.12/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4981_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/mlp/act_fn/Mul_output_0_dim0, A./model/layers.12/mlp/act_fn/Mul_output_0_dim1, A./model/layers.12/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.12/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.12/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.12/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.12/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.12/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.12/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.12/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.12/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.12/mlp/Mul_output_0_dim0 AS /model/layers.12/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_4982_dim1 AS onnx::MatMul_4982_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.12/mlp/Mul_output_0_dim0_onnx::MatMul_4982_dim1
+        FROM /model/layers.12/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_4982 AS B
+          ON A./model/layers.12/mlp/Mul_output_0_dim1 = B.onnx::MatMul_4982_dim0
+        GROUP BY A./model/layers.12/mlp/Mul_output_0_dim0, B.onnx::MatMul_4982_dim1
+        
+
+
+        SELECT
+          A./model/layers.12/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.12/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.12/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.12/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.12/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.12/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.12/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.12/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.12/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.12/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.12/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.13/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.13/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.13/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.13/input_layernorm/Cast_output_0_dim0, A./model/layers.13/input_layernorm/Cast_output_0_dim1, A./model/layers.13/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.13/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.13/input_layernorm/Cast_output_0_dim0 = B./model/layers.13/input_layernorm/Div_output_0_dim0 AND A./model/layers.13/input_layernorm/Cast_output_0_dim1 = B./model/layers.13/input_layernorm/Div_output_0_dim1 AND A./model/layers.13/input_layernorm/Cast_output_0_dim2 = B./model/layers.13/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.13.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.13.input_layernorm.weight AS A
+        JOIN /model/layers.13/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.13.input_layernorm.weight_dim0 = B./model/layers.13/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.13/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.13/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4983_dim1 AS onnx::MatMul_4983_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4983_dim1
+        FROM /model/layers.13/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4983 AS B
+          ON A./model/layers.13/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4983_dim0
+        GROUP BY A./model/layers.13/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4983_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.13/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4984_dim1 AS onnx::MatMul_4984_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4984_dim1
+        FROM /model/layers.13/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4984 AS B
+          ON A./model/layers.13/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4984_dim0
+        GROUP BY A./model/layers.13/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4984_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.13/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_4985_dim1 AS onnx::MatMul_4985_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_4985_dim1
+        FROM /model/layers.13/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_4985 AS B
+          ON A./model/layers.13/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_4985_dim0
+        GROUP BY A./model/layers.13/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_4985_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.13/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.13/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.13/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.13/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.13/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.13/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Transpose_output_0_dim0, A./model/layers.13/self_attn/Transpose_output_0_dim1, A./model/layers.13/self_attn/Transpose_output_0_dim2, A./model/layers.13/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.13/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.13/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.13/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.13/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Concat_output_0_dim0, A./model/layers.13/self_attn/Concat_output_0_dim1, A./model/layers.13/self_attn/Concat_output_0_dim2, A./model/layers.13/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.13/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.13/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.13/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.13/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Mul_output_0_dim0, A./model/layers.13/self_attn/Mul_output_0_dim1, A./model/layers.13/self_attn/Mul_output_0_dim2, A./model/layers.13/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.13/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.13/self_attn/Mul_output_0_dim0 = B./model/layers.13/self_attn/Mul_1_output_0_dim0 AND A./model/layers.13/self_attn/Mul_output_0_dim1 = B./model/layers.13/self_attn/Mul_1_output_0_dim1 AND A./model/layers.13/self_attn/Mul_output_0_dim2 = B./model/layers.13/self_attn/Mul_1_output_0_dim2 AND A./model/layers.13/self_attn/Mul_output_0_dim3 = B./model/layers.13/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Transpose_1_output_0_dim0, A./model/layers.13/self_attn/Transpose_1_output_0_dim1, A./model/layers.13/self_attn/Transpose_1_output_0_dim2, A./model/layers.13/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.13/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.13/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.13/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.13/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Concat_1_output_0_dim0, A./model/layers.13/self_attn/Concat_1_output_0_dim1, A./model/layers.13/self_attn/Concat_1_output_0_dim2, A./model/layers.13/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.13/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.13/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.13/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.13/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Mul_2_output_0_dim0, A./model/layers.13/self_attn/Mul_2_output_0_dim1, A./model/layers.13/self_attn/Mul_2_output_0_dim2, A./model/layers.13/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.13/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.13/self_attn/Mul_2_output_0_dim0 = B./model/layers.13/self_attn/Mul_3_output_0_dim0 AND A./model/layers.13/self_attn/Mul_2_output_0_dim1 = B./model/layers.13/self_attn/Mul_3_output_0_dim1 AND A./model/layers.13/self_attn/Mul_2_output_0_dim2 = B./model/layers.13/self_attn/Mul_3_output_0_dim2 AND A./model/layers.13/self_attn/Mul_2_output_0_dim3 = B./model/layers.13/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.13/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.13/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.13/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.13/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.13/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.13/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.13/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.13/self_attn/Constant_35_output_0_dim0 = B./model/layers.13/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Add_output_0 AS A
+        JOIN /model/layers.13/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.13/self_attn/Add_output_0_dim0 = B./model/layers.13/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.13/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.13/self_attn/Transpose_3_output_0_dim0 = B./model/layers.13/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Mul_6_output_0_dim0 AS /model/layers.13/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.13/self_attn/Mul_7_output_0_dim1 AS /model/layers.13/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/self_attn/Mul_6_output_0_dim0_/model/layers.13/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.13/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.13/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.13/self_attn/Mul_6_output_0_dim1 = B./model/layers.13/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.13/self_attn/Mul_6_output_0_dim0, B./model/layers.13/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/MatMul_output_0_dim0, A./model/layers.13/self_attn/MatMul_output_0_dim1, A./model/layers.13/self_attn/MatMul_output_0_dim2, A./model/layers.13/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.13/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.13/self_attn/MatMul_output_0_dim0 = B./model/layers.13/self_attn/Slice_4_output_0_dim0 AND A./model/layers.13/self_attn/MatMul_output_0_dim1 = B./model/layers.13/self_attn/Slice_4_output_0_dim1 AND A./model/layers.13/self_attn/MatMul_output_0_dim2 = B./model/layers.13/self_attn/Slice_4_output_0_dim2 AND A./model/layers.13/self_attn/MatMul_output_0_dim3 = B./model/layers.13/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.13/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.13/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.13/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.13/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.13/self_attn/Add_2_output_0_dim1, /model/layers.13/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.13/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.13/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Softmax_output_0_dim0 AS /model/layers.13/self_attn/Softmax_output_0_dim0,
+          B./model/layers.13/self_attn/Reshape_4_output_0_dim1 AS /model/layers.13/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/self_attn/Softmax_output_0_dim0_/model/layers.13/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.13/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.13/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.13/self_attn/Softmax_output_0_dim1 = B./model/layers.13/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.13/self_attn/Softmax_output_0_dim0, B./model/layers.13/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.13/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.13/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.13/self_attn/Reshape_5_output_0_dim0 AS /model/layers.13/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_5051_dim1 AS onnx::MatMul_5051_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_5051_dim1
+        FROM /model/layers.13/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_5051 AS B
+          ON A./model/layers.13/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_5051_dim0
+        GROUP BY A./model/layers.13/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_5051_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/input_layernorm/Cast_output_0_dim0, A./model/layers.13/input_layernorm/Cast_output_0_dim1, A./model/layers.13/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.13/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.13/input_layernorm/Cast_output_0_dim0 = B./model/layers.13/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.13/input_layernorm/Cast_output_0_dim1 = B./model/layers.13/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.13/input_layernorm/Cast_output_0_dim2 = B./model/layers.13/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.13/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.13/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.13/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.13/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.13/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.13/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.13/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.13/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.13/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.13/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.13/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.13/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.13/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.13.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.13.post_attention_layernorm.weight AS A
+        JOIN /model/layers.13/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.13.post_attention_layernorm.weight_dim0 = B./model/layers.13/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5052_dim1 AS onnx::MatMul_5052_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5052_dim1
+        FROM /model/layers.13/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5052 AS B
+          ON A./model/layers.13/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5052_dim0
+        GROUP BY A./model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5052_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.13/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.13/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.13/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.13/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.13/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.13/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5053_dim1 AS onnx::MatMul_5053_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5053_dim1
+        FROM /model/layers.13/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5053 AS B
+          ON A./model/layers.13/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5053_dim0
+        GROUP BY A./model/layers.13/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5053_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/mlp/act_fn/Mul_output_0_dim0, A./model/layers.13/mlp/act_fn/Mul_output_0_dim1, A./model/layers.13/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.13/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.13/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.13/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.13/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.13/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.13/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.13/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.13/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.13/mlp/Mul_output_0_dim0 AS /model/layers.13/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_5054_dim1 AS onnx::MatMul_5054_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.13/mlp/Mul_output_0_dim0_onnx::MatMul_5054_dim1
+        FROM /model/layers.13/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_5054 AS B
+          ON A./model/layers.13/mlp/Mul_output_0_dim1 = B.onnx::MatMul_5054_dim0
+        GROUP BY A./model/layers.13/mlp/Mul_output_0_dim0, B.onnx::MatMul_5054_dim1
+        
+
+
+        SELECT
+          A./model/layers.13/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.13/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.13/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.13/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.13/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.13/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.13/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.13/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.13/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.13/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.13/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.14/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.14/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.14/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.14/input_layernorm/Cast_output_0_dim0, A./model/layers.14/input_layernorm/Cast_output_0_dim1, A./model/layers.14/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.14/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.14/input_layernorm/Cast_output_0_dim0 = B./model/layers.14/input_layernorm/Div_output_0_dim0 AND A./model/layers.14/input_layernorm/Cast_output_0_dim1 = B./model/layers.14/input_layernorm/Div_output_0_dim1 AND A./model/layers.14/input_layernorm/Cast_output_0_dim2 = B./model/layers.14/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.14.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.14.input_layernorm.weight AS A
+        JOIN /model/layers.14/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.14.input_layernorm.weight_dim0 = B./model/layers.14/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.14/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.14/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5055_dim1 AS onnx::MatMul_5055_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5055_dim1
+        FROM /model/layers.14/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5055 AS B
+          ON A./model/layers.14/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5055_dim0
+        GROUP BY A./model/layers.14/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5055_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.14/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5056_dim1 AS onnx::MatMul_5056_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5056_dim1
+        FROM /model/layers.14/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5056 AS B
+          ON A./model/layers.14/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5056_dim0
+        GROUP BY A./model/layers.14/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5056_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.14/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5057_dim1 AS onnx::MatMul_5057_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5057_dim1
+        FROM /model/layers.14/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5057 AS B
+          ON A./model/layers.14/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5057_dim0
+        GROUP BY A./model/layers.14/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5057_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.14/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.14/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.14/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.14/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.14/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.14/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Transpose_output_0_dim0, A./model/layers.14/self_attn/Transpose_output_0_dim1, A./model/layers.14/self_attn/Transpose_output_0_dim2, A./model/layers.14/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.14/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.14/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.14/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.14/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Concat_output_0_dim0, A./model/layers.14/self_attn/Concat_output_0_dim1, A./model/layers.14/self_attn/Concat_output_0_dim2, A./model/layers.14/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.14/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.14/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.14/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.14/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Mul_output_0_dim0, A./model/layers.14/self_attn/Mul_output_0_dim1, A./model/layers.14/self_attn/Mul_output_0_dim2, A./model/layers.14/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.14/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.14/self_attn/Mul_output_0_dim0 = B./model/layers.14/self_attn/Mul_1_output_0_dim0 AND A./model/layers.14/self_attn/Mul_output_0_dim1 = B./model/layers.14/self_attn/Mul_1_output_0_dim1 AND A./model/layers.14/self_attn/Mul_output_0_dim2 = B./model/layers.14/self_attn/Mul_1_output_0_dim2 AND A./model/layers.14/self_attn/Mul_output_0_dim3 = B./model/layers.14/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Transpose_1_output_0_dim0, A./model/layers.14/self_attn/Transpose_1_output_0_dim1, A./model/layers.14/self_attn/Transpose_1_output_0_dim2, A./model/layers.14/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.14/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.14/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.14/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.14/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Concat_1_output_0_dim0, A./model/layers.14/self_attn/Concat_1_output_0_dim1, A./model/layers.14/self_attn/Concat_1_output_0_dim2, A./model/layers.14/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.14/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.14/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.14/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.14/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Mul_2_output_0_dim0, A./model/layers.14/self_attn/Mul_2_output_0_dim1, A./model/layers.14/self_attn/Mul_2_output_0_dim2, A./model/layers.14/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.14/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.14/self_attn/Mul_2_output_0_dim0 = B./model/layers.14/self_attn/Mul_3_output_0_dim0 AND A./model/layers.14/self_attn/Mul_2_output_0_dim1 = B./model/layers.14/self_attn/Mul_3_output_0_dim1 AND A./model/layers.14/self_attn/Mul_2_output_0_dim2 = B./model/layers.14/self_attn/Mul_3_output_0_dim2 AND A./model/layers.14/self_attn/Mul_2_output_0_dim3 = B./model/layers.14/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.14/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.14/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.14/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.14/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.14/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.14/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.14/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.14/self_attn/Constant_35_output_0_dim0 = B./model/layers.14/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Add_output_0 AS A
+        JOIN /model/layers.14/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.14/self_attn/Add_output_0_dim0 = B./model/layers.14/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.14/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.14/self_attn/Transpose_3_output_0_dim0 = B./model/layers.14/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Mul_6_output_0_dim0 AS /model/layers.14/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.14/self_attn/Mul_7_output_0_dim1 AS /model/layers.14/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/self_attn/Mul_6_output_0_dim0_/model/layers.14/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.14/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.14/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.14/self_attn/Mul_6_output_0_dim1 = B./model/layers.14/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.14/self_attn/Mul_6_output_0_dim0, B./model/layers.14/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/MatMul_output_0_dim0, A./model/layers.14/self_attn/MatMul_output_0_dim1, A./model/layers.14/self_attn/MatMul_output_0_dim2, A./model/layers.14/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.14/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.14/self_attn/MatMul_output_0_dim0 = B./model/layers.14/self_attn/Slice_4_output_0_dim0 AND A./model/layers.14/self_attn/MatMul_output_0_dim1 = B./model/layers.14/self_attn/Slice_4_output_0_dim1 AND A./model/layers.14/self_attn/MatMul_output_0_dim2 = B./model/layers.14/self_attn/Slice_4_output_0_dim2 AND A./model/layers.14/self_attn/MatMul_output_0_dim3 = B./model/layers.14/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.14/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.14/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.14/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.14/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.14/self_attn/Add_2_output_0_dim1, /model/layers.14/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.14/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.14/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Softmax_output_0_dim0 AS /model/layers.14/self_attn/Softmax_output_0_dim0,
+          B./model/layers.14/self_attn/Reshape_4_output_0_dim1 AS /model/layers.14/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/self_attn/Softmax_output_0_dim0_/model/layers.14/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.14/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.14/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.14/self_attn/Softmax_output_0_dim1 = B./model/layers.14/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.14/self_attn/Softmax_output_0_dim0, B./model/layers.14/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.14/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.14/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.14/self_attn/Reshape_5_output_0_dim0 AS /model/layers.14/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_5123_dim1 AS onnx::MatMul_5123_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_5123_dim1
+        FROM /model/layers.14/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_5123 AS B
+          ON A./model/layers.14/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_5123_dim0
+        GROUP BY A./model/layers.14/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_5123_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/input_layernorm/Cast_output_0_dim0, A./model/layers.14/input_layernorm/Cast_output_0_dim1, A./model/layers.14/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.14/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.14/input_layernorm/Cast_output_0_dim0 = B./model/layers.14/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.14/input_layernorm/Cast_output_0_dim1 = B./model/layers.14/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.14/input_layernorm/Cast_output_0_dim2 = B./model/layers.14/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.14/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.14/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.14/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.14/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.14/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.14/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.14/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.14/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.14/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.14/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.14/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.14/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.14/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.14.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.14.post_attention_layernorm.weight AS A
+        JOIN /model/layers.14/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.14.post_attention_layernorm.weight_dim0 = B./model/layers.14/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5124_dim1 AS onnx::MatMul_5124_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5124_dim1
+        FROM /model/layers.14/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5124 AS B
+          ON A./model/layers.14/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5124_dim0
+        GROUP BY A./model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5124_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.14/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.14/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.14/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.14/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.14/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.14/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5125_dim1 AS onnx::MatMul_5125_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5125_dim1
+        FROM /model/layers.14/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5125 AS B
+          ON A./model/layers.14/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5125_dim0
+        GROUP BY A./model/layers.14/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5125_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/mlp/act_fn/Mul_output_0_dim0, A./model/layers.14/mlp/act_fn/Mul_output_0_dim1, A./model/layers.14/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.14/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.14/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.14/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.14/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.14/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.14/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.14/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.14/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.14/mlp/Mul_output_0_dim0 AS /model/layers.14/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_5126_dim1 AS onnx::MatMul_5126_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.14/mlp/Mul_output_0_dim0_onnx::MatMul_5126_dim1
+        FROM /model/layers.14/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_5126 AS B
+          ON A./model/layers.14/mlp/Mul_output_0_dim1 = B.onnx::MatMul_5126_dim0
+        GROUP BY A./model/layers.14/mlp/Mul_output_0_dim0, B.onnx::MatMul_5126_dim1
+        
+
+
+        SELECT
+          A./model/layers.14/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.14/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.14/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.14/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.14/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.14/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.14/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.14/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.14/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.14/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.14/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/input_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.15/input_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.15/input_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.15/input_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.15/input_layernorm/Cast_output_0_dim0, A./model/layers.15/input_layernorm/Cast_output_0_dim1, A./model/layers.15/input_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.15/input_layernorm/Div_output_0 AS B
+          ON A./model/layers.15/input_layernorm/Cast_output_0_dim0 = B./model/layers.15/input_layernorm/Div_output_0_dim0 AND A./model/layers.15/input_layernorm/Cast_output_0_dim1 = B./model/layers.15/input_layernorm/Div_output_0_dim1 AND A./model/layers.15/input_layernorm/Cast_output_0_dim2 = B./model/layers.15/input_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.15.input_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.15.input_layernorm.weight AS A
+        JOIN /model/layers.15/input_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.15.input_layernorm.weight_dim0 = B./model/layers.15/input_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.15/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.15/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5127_dim1 AS onnx::MatMul_5127_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5127_dim1
+        FROM /model/layers.15/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5127 AS B
+          ON A./model/layers.15/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5127_dim0
+        GROUP BY A./model/layers.15/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5127_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.15/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5128_dim1 AS onnx::MatMul_5128_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5128_dim1
+        FROM /model/layers.15/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5128 AS B
+          ON A./model/layers.15/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5128_dim0
+        GROUP BY A./model/layers.15/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5128_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/input_layernorm/Mul_1_output_0_dim0 AS /model/layers.15/input_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5129_dim1 AS onnx::MatMul_5129_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/input_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5129_dim1
+        FROM /model/layers.15/input_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5129 AS B
+          ON A./model/layers.15/input_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5129_dim0
+        GROUP BY A./model/layers.15/input_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5129_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.15/self_attn/q_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.15/self_attn/q_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.15/self_attn/k_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.15/self_attn/k_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.15/self_attn/v_proj/MatMul_output_0 AS A
+        -- reshape via: reshape(/model/layers.15/self_attn/v_proj/MatMul_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Transpose_output_0_dim0, A./model/layers.15/self_attn/Transpose_output_0_dim1, A./model/layers.15/self_attn/Transpose_output_0_dim2, A./model/layers.15/self_attn/Transpose_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Transpose_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.15/self_attn/Transpose_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.15/self_attn/Transpose_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.15/self_attn/Transpose_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.15/self_attn/Transpose_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Concat_output_0_dim0, A./model/layers.15/self_attn/Concat_output_0_dim1, A./model/layers.15/self_attn/Concat_output_0_dim2, A./model/layers.15/self_attn/Concat_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Concat_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.15/self_attn/Concat_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.15/self_attn/Concat_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.15/self_attn/Concat_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.15/self_attn/Concat_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Mul_output_0_dim0, A./model/layers.15/self_attn/Mul_output_0_dim1, A./model/layers.15/self_attn/Mul_output_0_dim2, A./model/layers.15/self_attn/Mul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Mul_output_0 AS A
+        JOIN /model/layers.15/self_attn/Mul_1_output_0 AS B
+          ON A./model/layers.15/self_attn/Mul_output_0_dim0 = B./model/layers.15/self_attn/Mul_1_output_0_dim0 AND A./model/layers.15/self_attn/Mul_output_0_dim1 = B./model/layers.15/self_attn/Mul_1_output_0_dim1 AND A./model/layers.15/self_attn/Mul_output_0_dim2 = B./model/layers.15/self_attn/Mul_1_output_0_dim2 AND A./model/layers.15/self_attn/Mul_output_0_dim3 = B./model/layers.15/self_attn/Mul_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Transpose_1_output_0_dim0, A./model/layers.15/self_attn/Transpose_1_output_0_dim1, A./model/layers.15/self_attn/Transpose_1_output_0_dim2, A./model/layers.15/self_attn/Transpose_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Transpose_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_output_0 AS B
+          ON A./model/layers.15/self_attn/Transpose_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim0 AND A./model/layers.15/self_attn/Transpose_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim1 AND A./model/layers.15/self_attn/Transpose_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim2 AND A./model/layers.15/self_attn/Transpose_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Concat_1_output_0_dim0, A./model/layers.15/self_attn/Concat_1_output_0_dim1, A./model/layers.15/self_attn/Concat_1_output_0_dim2, A./model/layers.15/self_attn/Concat_1_output_0_dim3,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Concat_1_output_0 AS A
+        JOIN /model/layers.0/self_attn/Unsqueeze_1_output_0 AS B
+          ON A./model/layers.15/self_attn/Concat_1_output_0_dim0 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim0 AND A./model/layers.15/self_attn/Concat_1_output_0_dim1 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim1 AND A./model/layers.15/self_attn/Concat_1_output_0_dim2 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim2 AND A./model/layers.15/self_attn/Concat_1_output_0_dim3 = B./model/layers.0/self_attn/Unsqueeze_1_output_0_dim3
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Mul_2_output_0_dim0, A./model/layers.15/self_attn/Mul_2_output_0_dim1, A./model/layers.15/self_attn/Mul_2_output_0_dim2, A./model/layers.15/self_attn/Mul_2_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Mul_2_output_0 AS A
+        JOIN /model/layers.15/self_attn/Mul_3_output_0 AS B
+          ON A./model/layers.15/self_attn/Mul_2_output_0_dim0 = B./model/layers.15/self_attn/Mul_3_output_0_dim0 AND A./model/layers.15/self_attn/Mul_2_output_0_dim1 = B./model/layers.15/self_attn/Mul_3_output_0_dim1 AND A./model/layers.15/self_attn/Mul_2_output_0_dim2 = B./model/layers.15/self_attn/Mul_3_output_0_dim2 AND A./model/layers.15/self_attn/Mul_2_output_0_dim3 = B./model/layers.15/self_attn/Mul_3_output_0_dim3
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/ConstantOfShape_output_0 AS A
+        JOIN /model/layers.15/self_attn/Constant_22_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.15/self_attn/Expand_output_0 AS A
+        -- reshape via: reshape(/model/layers.15/self_attn/Expand_output_0, None)
+        
+
+
+        SELECT
+          ,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/ConstantOfShape_1_output_0 AS A
+        JOIN /model/layers.15/self_attn/Constant_27_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.15/self_attn/Expand_1_output_0 AS A
+        -- reshape via: reshape(/model/layers.15/self_attn/Expand_1_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Constant_35_output_0_dim0,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Constant_35_output_0 AS A
+        JOIN /model/layers.15/self_attn/Sqrt_output_0 AS B
+          ON A./model/layers.15/self_attn/Constant_35_output_0_dim0 = B./model/layers.15/self_attn/Sqrt_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Add_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Add_output_0 AS A
+        JOIN /model/layers.15/self_attn/Sqrt_1_output_0 AS B
+          ON A./model/layers.15/self_attn/Add_output_0_dim0 = B./model/layers.15/self_attn/Sqrt_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Transpose_3_output_0_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/self_attn/Transpose_3_output_0 AS A
+        JOIN /model/layers.15/self_attn/Sqrt_2_output_0 AS B
+          ON A./model/layers.15/self_attn/Transpose_3_output_0_dim0 = B./model/layers.15/self_attn/Sqrt_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Mul_6_output_0_dim0 AS /model/layers.15/self_attn/Mul_6_output_0_dim0,
+          B./model/layers.15/self_attn/Mul_7_output_0_dim1 AS /model/layers.15/self_attn/Mul_7_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/self_attn/Mul_6_output_0_dim0_/model/layers.15/self_attn/Mul_7_output_0_dim1
+        FROM /model/layers.15/self_attn/Mul_6_output_0 AS A
+        JOIN /model/layers.15/self_attn/Mul_7_output_0 AS B
+          ON A./model/layers.15/self_attn/Mul_6_output_0_dim1 = B./model/layers.15/self_attn/Mul_7_output_0_dim0
+        GROUP BY A./model/layers.15/self_attn/Mul_6_output_0_dim0, B./model/layers.15/self_attn/Mul_7_output_0_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/MatMul_output_0_dim0, A./model/layers.15/self_attn/MatMul_output_0_dim1, A./model/layers.15/self_attn/MatMul_output_0_dim2, A./model/layers.15/self_attn/MatMul_output_0_dim3,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/self_attn/MatMul_output_0 AS A
+        JOIN /model/layers.15/self_attn/Slice_4_output_0 AS B
+          ON A./model/layers.15/self_attn/MatMul_output_0_dim0 = B./model/layers.15/self_attn/Slice_4_output_0_dim0 AND A./model/layers.15/self_attn/MatMul_output_0_dim1 = B./model/layers.15/self_attn/Slice_4_output_0_dim1 AND A./model/layers.15/self_attn/MatMul_output_0_dim2 = B./model/layers.15/self_attn/Slice_4_output_0_dim2 AND A./model/layers.15/self_attn/MatMul_output_0_dim3 = B./model/layers.15/self_attn/Slice_4_output_0_dim3
+        
+
+
+        WITH exp_vals AS (
+          SELECT
+            A./model/layers.15/self_attn/Add_2_output_0_dim1,
+            exp(A.chunk) AS exp_chunk
+          FROM /model/layers.15/self_attn/Add_2_output_0 AS A
+        ),
+        agg_vals AS (
+          SELECT
+            A./model/layers.15/self_attn/Add_2_output_0_dim1,
+            SUM(exp_chunk) AS sum_exp
+          FROM exp_vals
+          GROUP BY /model/layers.15/self_attn/Add_2_output_0_dim0
+        )
+        SELECT
+          A./model/layers.15/self_attn/Add_2_output_0_dim1, /model/layers.15/self_attn/Add_2_output_0_dim0,
+          div(exp_vals.exp_chunk, agg_vals.sum_exp) AS normalized_chunk
+        FROM exp_vals
+        JOIN agg_vals
+          ON exp_vals./model/layers.15/self_attn/Add_2_output_0_dim0 = agg_vals./model/layers.15/self_attn/Add_2_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Softmax_output_0_dim0 AS /model/layers.15/self_attn/Softmax_output_0_dim0,
+          B./model/layers.15/self_attn/Reshape_4_output_0_dim1 AS /model/layers.15/self_attn/Reshape_4_output_0_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/self_attn/Softmax_output_0_dim0_/model/layers.15/self_attn/Reshape_4_output_0_dim1
+        FROM /model/layers.15/self_attn/Softmax_output_0 AS A
+        JOIN /model/layers.15/self_attn/Reshape_4_output_0 AS B
+          ON A./model/layers.15/self_attn/Softmax_output_0_dim1 = B./model/layers.15/self_attn/Reshape_4_output_0_dim0
+        GROUP BY A./model/layers.15/self_attn/Softmax_output_0_dim0, B./model/layers.15/self_attn/Reshape_4_output_0_dim1
+        
+
+
+        SELECT
+          ,
+          A.chunk AS chunk
+        FROM /model/layers.15/self_attn/Transpose_4_output_0 AS A
+        -- reshape via: reshape(/model/layers.15/self_attn/Transpose_4_output_0, None)
+        
+
+
+        SELECT
+          A./model/layers.15/self_attn/Reshape_5_output_0_dim0 AS /model/layers.15/self_attn/Reshape_5_output_0_dim0,
+          B.onnx::MatMul_5195_dim1 AS onnx::MatMul_5195_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/self_attn/Reshape_5_output_0_dim0_onnx::MatMul_5195_dim1
+        FROM /model/layers.15/self_attn/Reshape_5_output_0 AS A
+        JOIN onnx::MatMul_5195 AS B
+          ON A./model/layers.15/self_attn/Reshape_5_output_0_dim1 = B.onnx::MatMul_5195_dim0
+        GROUP BY A./model/layers.15/self_attn/Reshape_5_output_0_dim0, B.onnx::MatMul_5195_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/input_layernorm/Cast_output_0_dim0, A./model/layers.15/input_layernorm/Cast_output_0_dim1, A./model/layers.15/input_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/input_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.15/self_attn/o_proj/MatMul_output_0 AS B
+          ON A./model/layers.15/input_layernorm/Cast_output_0_dim0 = B./model/layers.15/self_attn/o_proj/MatMul_output_0_dim0 AND A./model/layers.15/input_layernorm/Cast_output_0_dim1 = B./model/layers.15/self_attn/o_proj/MatMul_output_0_dim1 AND A./model/layers.15/input_layernorm/Cast_output_0_dim2 = B./model/layers.15/self_attn/o_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/post_attention_layernorm/ReduceMean_output_0 AS A
+        JOIN /model/layers.15/post_attention_layernorm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/layers.15/post_attention_layernorm/Constant_2_output_0 AS A
+        JOIN /model/layers.15/post_attention_layernorm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/layers.15/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.15/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.15/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.15/post_attention_layernorm/Div_output_0 AS B
+          ON A./model/layers.15/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.15/post_attention_layernorm/Div_output_0_dim0 AND A./model/layers.15/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.15/post_attention_layernorm/Div_output_0_dim1 AND A./model/layers.15/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.15/post_attention_layernorm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.layers.15.post_attention_layernorm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.layers.15.post_attention_layernorm.weight AS A
+        JOIN /model/layers.15/post_attention_layernorm/Cast_1_output_0 AS B
+          ON A.model.layers.15.post_attention_layernorm.weight_dim0 = B./model/layers.15/post_attention_layernorm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5196_dim1 AS onnx::MatMul_5196_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5196_dim1
+        FROM /model/layers.15/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5196 AS B
+          ON A./model/layers.15/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5196_dim0
+        GROUP BY A./model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5196_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim2,
+          sigmoid(A.chunk) AS chunk
+        FROM /model/layers.15/mlp/gate_proj/MatMul_output_0 AS A
+        
+
+
+        SELECT
+          A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim0, A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim1, A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/mlp/gate_proj/MatMul_output_0 AS A
+        JOIN /model/layers.15/mlp/act_fn/Sigmoid_output_0 AS B
+          ON A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim0 = B./model/layers.15/mlp/act_fn/Sigmoid_output_0_dim0 AND A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim1 = B./model/layers.15/mlp/act_fn/Sigmoid_output_0_dim1 AND A./model/layers.15/mlp/gate_proj/MatMul_output_0_dim2 = B./model/layers.15/mlp/act_fn/Sigmoid_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0 AS /model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0,
+          B.onnx::MatMul_5197_dim1 AS onnx::MatMul_5197_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0_onnx::MatMul_5197_dim1
+        FROM /model/layers.15/post_attention_layernorm/Mul_1_output_0 AS A
+        JOIN onnx::MatMul_5197 AS B
+          ON A./model/layers.15/post_attention_layernorm/Mul_1_output_0_dim1 = B.onnx::MatMul_5197_dim0
+        GROUP BY A./model/layers.15/post_attention_layernorm/Mul_1_output_0_dim0, B.onnx::MatMul_5197_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/mlp/act_fn/Mul_output_0_dim0, A./model/layers.15/mlp/act_fn/Mul_output_0_dim1, A./model/layers.15/mlp/act_fn/Mul_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/layers.15/mlp/act_fn/Mul_output_0 AS A
+        JOIN /model/layers.15/mlp/up_proj/MatMul_output_0 AS B
+          ON A./model/layers.15/mlp/act_fn/Mul_output_0_dim0 = B./model/layers.15/mlp/up_proj/MatMul_output_0_dim0 AND A./model/layers.15/mlp/act_fn/Mul_output_0_dim1 = B./model/layers.15/mlp/up_proj/MatMul_output_0_dim1 AND A./model/layers.15/mlp/act_fn/Mul_output_0_dim2 = B./model/layers.15/mlp/up_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          A./model/layers.15/mlp/Mul_output_0_dim0 AS /model/layers.15/mlp/Mul_output_0_dim0,
+          B.onnx::MatMul_5198_dim1 AS onnx::MatMul_5198_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/model/layers.15/mlp/Mul_output_0_dim0_onnx::MatMul_5198_dim1
+        FROM /model/layers.15/mlp/Mul_output_0 AS A
+        JOIN onnx::MatMul_5198 AS B
+          ON A./model/layers.15/mlp/Mul_output_0_dim1 = B.onnx::MatMul_5198_dim0
+        GROUP BY A./model/layers.15/mlp/Mul_output_0_dim0, B.onnx::MatMul_5198_dim1
+        
+
+
+        SELECT
+          A./model/layers.15/post_attention_layernorm/Cast_output_0_dim0, A./model/layers.15/post_attention_layernorm/Cast_output_0_dim1, A./model/layers.15/post_attention_layernorm/Cast_output_0_dim2,
+          A.chunk add B.chunk AS chunk
+        FROM /model/layers.15/post_attention_layernorm/Cast_output_0 AS A
+        JOIN /model/layers.15/mlp/down_proj/MatMul_output_0 AS B
+          ON A./model/layers.15/post_attention_layernorm/Cast_output_0_dim0 = B./model/layers.15/mlp/down_proj/MatMul_output_0_dim0 AND A./model/layers.15/post_attention_layernorm/Cast_output_0_dim1 = B./model/layers.15/mlp/down_proj/MatMul_output_0_dim1 AND A./model/layers.15/post_attention_layernorm/Cast_output_0_dim2 = B./model/layers.15/mlp/down_proj/MatMul_output_0_dim2
+        
+
+
+        SELECT
+          ,
+          A.chunk add B.chunk AS chunk
+        FROM /model/norm/ReduceMean_output_0 AS A
+        JOIN /model/norm/Constant_1_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          ,
+          A.chunk div B.chunk AS chunk
+        FROM /model/norm/Constant_2_output_0 AS A
+        JOIN /model/norm/Sqrt_output_0 AS B
+          ON 
+        
+
+
+        SELECT
+          A./model/norm/Cast_output_0_dim0, A./model/norm/Cast_output_0_dim1, A./model/norm/Cast_output_0_dim2,
+          A.chunk mul B.chunk AS chunk
+        FROM /model/norm/Cast_output_0 AS A
+        JOIN /model/norm/Div_output_0 AS B
+          ON A./model/norm/Cast_output_0_dim0 = B./model/norm/Div_output_0_dim0 AND A./model/norm/Cast_output_0_dim1 = B./model/norm/Div_output_0_dim1 AND A./model/norm/Cast_output_0_dim2 = B./model/norm/Div_output_0_dim2
+        
+
+
+        SELECT
+          A.model.norm.weight_dim0,
+          A.chunk mul B.chunk AS chunk
+        FROM model.norm.weight AS A
+        JOIN /model/norm/Cast_1_output_0 AS B
+          ON A.model.norm.weight_dim0 = B./model/norm/Cast_1_output_0_dim0
+        
+
+
+        SELECT
+          A./Slice_output_0_dim0 AS /Slice_output_0_dim0,
+          B.onnx::MatMul_5202_dim1 AS onnx::MatMul_5202_dim1,
+          SUM(DOT(A.chunk, B.chunk)) AS value_/Slice_output_0_dim0_onnx::MatMul_5202_dim1
+        FROM /Slice_output_0 AS A
+        JOIN onnx::MatMul_5202 AS B
+          ON A./Slice_output_0_dim1 = B.onnx::MatMul_5202_dim0
+        GROUP BY A./Slice_output_0_dim0, B.onnx::MatMul_5202_dim1
+        
+

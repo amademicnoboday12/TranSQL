@@ -1,0 +1,9 @@
+Memory,phase,model,normalization,attention,Swiglu/Experts
+16GB,Prefilling,llama,0.039,0.165,0.249
+16GB,Prefilling,deepseek,0.024,0.146,0.171
+16GB,Decoding,llama,0.032,0.062,0.071
+16GB,Decoding,deepseek,0.014,0.05,0.058
+8GB,Prefilling,llama,0.045,0.312,0.592
+8GB,Prefilling,deepseek,0.024,0.176,0.519
+8GB,Decoding,llama,0.024,0.09,0.149
+8GB,Decoding,deepseek,0.016,0.073,0.078
